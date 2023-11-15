@@ -16,10 +16,11 @@ namespace AcademiaIdiomas
         private DateTime fechaNac;
         private String nombreUsuario;
         private String contrasena;
+        private bool admin;
 
         public static List<Usuario> listaUsuarios = new List<Usuario>();
 
-        public Usuario(string nombre, string apellido1, string apellido2, string dni, string domicilio, DateTime fechaNac, string usuario, string contrasena)
+        public Usuario(string nombre, string apellido1, string apellido2, string dni, string domicilio, DateTime fechaNac, string usuario, string contrasena, bool admin)
         {
             this.Nombre = nombre;
             this.Apellido1 = apellido1;
@@ -29,6 +30,7 @@ namespace AcademiaIdiomas
             this.FechaNac = fechaNac;
             this.nombreUsuario = usuario;
             this.Contrasena = contrasena;
+            this.admin = admin;
         }
         public Usuario()
         {

@@ -95,9 +95,12 @@ namespace AcademiaIdiomas
 
             for(int i = 0; i < Usuario.listaUsuarios.Count; i++)
             {
-                if (nombreUsuarioBox.Equals(Usuario.listaUsuarios[i]))
+                if (nombreUsuarioBox.Text.Equals(Usuario.listaUsuarios[i].NombreUsuario))
                 {
-                    MessageBox.Show("El usuario ya está usado, prueba a cambiarlo");
+                    MessageBox.Show("El usuario ya está en uso, prueba a cambiarlo");
+                    nombreUsuarioBox.Clear();
+                    contrasena1Box.Clear();
+                    contrasena2Box.Clear();
                     validar = false;
                 }
             }
@@ -111,11 +114,16 @@ namespace AcademiaIdiomas
 
             if (validar)
             {
-                Usuario.listaUsuarios.Add(new Usuario(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value,nombreUsuarioBox.Text,contrasena1Box.Text));
+                Usuario.listaUsuarios.Add(new Usuario(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value,nombreUsuarioBox.Text,contrasena1Box.Text, false));
                 this.Close();
                 InicioSesion Form = new InicioSesion();
                 Form.ShowDialog();
             }
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

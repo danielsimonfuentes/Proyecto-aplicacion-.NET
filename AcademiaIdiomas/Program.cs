@@ -16,7 +16,10 @@ namespace AcademiaIdiomas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Principal());
+            
+            Principal principal = new Principal(false);
+            principal.Show();
+            Application.Run();
         }
     }
 }

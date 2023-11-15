@@ -47,6 +47,7 @@
             this.acceptBut.TabIndex = 0;
             this.acceptBut.Text = "Aceptar";
             this.acceptBut.UseVisualStyleBackColor = true;
+            this.acceptBut.Click += new System.EventHandler(this.acceptBut_Click);
             // 
             // usuarioBox
             // 
@@ -144,6 +145,8 @@
             this.MaximizeBox = false;
             this.Name = "InicioSesion";
             this.Text = "InicioSesion";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesion_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InicioSesion_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

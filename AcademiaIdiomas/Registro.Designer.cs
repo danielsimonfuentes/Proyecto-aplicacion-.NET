@@ -265,8 +265,11 @@
             this.Controls.Add(this.nombreLabel);
             this.Controls.Add(this.nombreBox);
             this.Controls.Add(this.registroLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Registro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
