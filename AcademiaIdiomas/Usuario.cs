@@ -45,4 +45,5 @@ namespace AcademiaIdiomas
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
         public string Contrasena { get => contrasena; set => contrasena = value; }
     }
+
 }

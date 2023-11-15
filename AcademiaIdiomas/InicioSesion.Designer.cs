@@ -37,11 +37,12 @@
             this.cancelBut = new System.Windows.Forms.Button();
             this.registroLabel = new System.Windows.Forms.Label();
             this.registrateLink = new System.Windows.Forms.LinkLabel();
+            this.accederBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // acceptBut
             // 
-            this.acceptBut.Location = new System.Drawing.Point(84, 250);
+            this.acceptBut.Location = new System.Drawing.Point(84, 262);
             this.acceptBut.Name = "acceptBut";
             this.acceptBut.Size = new System.Drawing.Size(103, 36);
             this.acceptBut.TabIndex = 0;
@@ -97,7 +98,7 @@
             // cancelBut
             // 
             this.cancelBut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBut.Location = new System.Drawing.Point(235, 250);
+            this.cancelBut.Location = new System.Drawing.Point(235, 262);
             this.cancelBut.Name = "cancelBut";
             this.cancelBut.Size = new System.Drawing.Size(103, 36);
             this.cancelBut.TabIndex = 7;
@@ -107,7 +108,7 @@
             // registroLabel
             // 
             this.registroLabel.AutoSize = true;
-            this.registroLabel.Location = new System.Drawing.Point(101, 335);
+            this.registroLabel.Location = new System.Drawing.Point(101, 223);
             this.registroLabel.Name = "registroLabel";
             this.registroLabel.Size = new System.Drawing.Size(125, 13);
             this.registroLabel.TabIndex = 8;
@@ -116,13 +117,24 @@
             // registrateLink
             // 
             this.registrateLink.AutoSize = true;
-            this.registrateLink.Location = new System.Drawing.Point(232, 335);
+            this.registrateLink.Location = new System.Drawing.Point(232, 223);
             this.registrateLink.Name = "registrateLink";
             this.registrateLink.Size = new System.Drawing.Size(57, 13);
             this.registrateLink.TabIndex = 9;
             this.registrateLink.TabStop = true;
             this.registrateLink.Text = "Regístrate";
             this.registrateLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.registrateLink_LinkClicked);
+            // 
+            // accederBut
+            // 
+            this.accederBut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.accederBut.Location = new System.Drawing.Point(159, 322);
+            this.accederBut.Name = "accederBut";
+            this.accederBut.Size = new System.Drawing.Size(100, 34);
+            this.accederBut.TabIndex = 10;
+            this.accederBut.Text = "Accede sin cuenta";
+            this.accederBut.UseVisualStyleBackColor = true;
+            this.accederBut.Click += new System.EventHandler(this.accederBut_Click);
             // 
             // InicioSesion
             // 
@@ -131,7 +143,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.cancelBut;
-            this.ClientSize = new System.Drawing.Size(419, 383);
+            this.ClientSize = new System.Drawing.Size(425, 416);
+            this.Controls.Add(this.accederBut);
             this.Controls.Add(this.registrateLink);
             this.Controls.Add(this.registroLabel);
             this.Controls.Add(this.cancelBut);
@@ -147,6 +160,7 @@
             this.Text = "InicioSesion";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesion_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InicioSesion_FormClosed);
+            this.Load += new System.EventHandler(this.InicioSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,5 +177,6 @@
         private System.Windows.Forms.Button cancelBut;
         private System.Windows.Forms.Label registroLabel;
         private System.Windows.Forms.LinkLabel registrateLink;
+        private System.Windows.Forms.Button accederBut;
     }
 }
