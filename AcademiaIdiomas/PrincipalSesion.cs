@@ -12,10 +12,8 @@ namespace AcademiaIdiomas
 {
     public partial class PrincipalSesion : Form
     {
-        private String user;
-        public PrincipalSesion(string user)
+        public PrincipalSesion()
         {
-            this.user = user;
             InitializeComponent();
 
         }
@@ -48,6 +46,24 @@ namespace AcademiaIdiomas
 
                 }
             }
+        }
+
+        private void inglésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InglesForm Form = new InglesForm();
+            Form.Show();
+        }
+
+        private void francésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrancesForm Form = new FrancesForm();
+            Form.Show();
+        }
+
+        private void alemánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlemanForm Form = new AlemanForm();
+            Form.Show();
         }
     }
 }

@@ -33,7 +33,15 @@ namespace AcademiaIdiomas
             {
                 usuarioBox.Clear();
                 contrasenaBox.Clear();
-                PrincipalSesion Form = new PrincipalSesion(usuarioBox.Text);
+                foreach (var item in Usuario.listaUsuarios)
+                {
+                    if (item.NombreUsuario.Equals(usuarioBox.Text))
+                    {
+                        Usuario.usuarioActual.Clear();
+                        Usuario.usuarioActual.Add(item);
+                    }
+                }
+                PrincipalSesion Form = new PrincipalSesion();
                 Form.Show();
                 this.Close();
             }
@@ -72,6 +80,7 @@ namespace AcademiaIdiomas
         private void InicioSesion_Load(object sender, EventArgs e)
         {
             cargarUsuarios();
+            cargarEstudiantes();
         }
 
         private void cargarUsuarios()
@@ -82,6 +91,45 @@ namespace AcademiaIdiomas
             Usuario.listaUsuarios.Add(new Usuario("Luis", "Lopez", "Martinez", "56781234D", "Calle Cualquiera 4", DateTime.Parse("11/7/1980 12:00:00 AM"), "luis", "luis", false));
             Usuario.listaUsuarios.Add(new Usuario("Fernando", "Marcos", "Martín", "87654321E", "Calle Cualquiera 5", DateTime.Parse("17/8/1986 12:00:00 AM"), "fernando", "fernando", true));
             Usuario.listaUsuarios.Add(new Usuario("Daniel", "Simón", "Fuentes", "12348765F", "Calle Cualquiera 6", DateTime.Parse("9/3/2004 12:00:00 AM"), "daniel", "daniel", true));
+        }
+
+        private void cargarEstudiantes()
+        {
+            Estudiante.listaEstudiantes.Add(new Estudiante(87654321, "María", "López", "González", 22, "francés", "B1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(11112222, "Pedro", "Martínez", "Fernández", 21, "alemán", "C1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(99998888, "Ana", "Rodríguez", "Sánchez", 23, "inglés", "A1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(55556666, "Carlos", "García", "Muñoz", 19, "inglés", "B2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(12345678, "Juan", "Pérez", "Gómez", 20, "inglés", "A2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(78901234, "Laura", "Fernández", "Santos", 24, "francés", "C2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(23456789, "Diego", "Gutiérrez", "Jiménez", 22, "francés", "B2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(34567890, "Isabel", "Hernández", "Ortega", 20, "alemán", "A2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(45678901, "Fernando", "Mendoza", "Luna", 21, "inglés", "B1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(56789012, "Elena", "Ortiz", "Silva", 23, "francés", "C1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(67890123, "Lucía", "Cruz", "Rojas", 22, "inglés", "A2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(78901234, "Juan", "Gómez", "Santos", 20, "alemán", "B1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(89012345, "Marta", "Ferrer", "López", 24, "francés", "C2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(90123456, "Sergio", "Sánchez", "Jiménez", 21, "inglés", "A1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(12345098, "Paula", "Martínez", "Herrera", 23, "alemán", "B2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(23450987, "Javier", "Vega", "Navarro", 22, "francés", "C1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(34509876, "Rocío", "González", "Díaz", 20, "francés", "A2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(45698765, "Alberto", "Ruíz", "Blanco", 21, "alemán", "B1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(56787654, "Natalia", "Serrano", "Gálvez", 23, "francés", "C2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(67876543, "Mario", "Fernández", "Romero", 24, "alemán", "A1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(98765432, "Luis", "Gómez", "Pérez", 25, "alemán", "C1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(22223333, "Silvia", "Herrera", "Torres", 19, "alemán", "A2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(77778888, "Raúl", "Fernández", "Martínez", 22, "francés", "B1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(88887777, "Carmen", "García", "Rodríguez", 20, "inglés", "C2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(13579246, "Antonio", "Sánchez", "López", 23, "alemán", "A1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(24681357, "Eva", "Martínez", "Gómez", 21, "francés", "B2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(65432109, "Roberto", "González", "Hernández", 24, "inglés", "A1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(78901234, "Nuria", "Ortiz", "Serrano", 20, "alemán", "C1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(32109876, "Miguel", "Ruíz", "Díaz", 22, "inglés", "B2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(98761234, "Sara", "Gómez", "Fernández", 23, "francés", "C2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(13579135, "Marina", "López", "García", 21, "alemán", "C2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(24680246, "Daniel", "Fernández", "Martínez", 22, "inglés", "A1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(98765439, "Adriana", "García", "Rodríguez", 20, "francés", "B2"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(35791357, "Roberto", "Sánchez", "Ortega", 23, "inglés", "C1"));
+            Estudiante.listaEstudiantes.Add(new Estudiante(46812468, "Laura", "Gómez", "Muñoz", 21, "inglés", "A2"));
         }
     }
 }

@@ -46,6 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlemanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlemanForm.Designer.cs">
+      <DependentUpon>AlemanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estudiante.cs" />
+    <Compile Include="FrancesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrancesForm.Designer.cs">
+      <DependentUpon>FrancesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InglesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InglesForm.Designer.cs">
+      <DependentUpon>InglesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="InicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +98,15 @@
       <DependentUpon>Registro.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
+    <EmbeddedResource Include="AlemanForm.resx">
+      <DependentUpon>AlemanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrancesForm.resx">
+      <DependentUpon>FrancesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InglesForm.resx">
+      <DependentUpon>InglesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
     </EmbeddedResource>

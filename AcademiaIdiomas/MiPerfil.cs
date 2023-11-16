@@ -16,5 +16,10 @@ namespace AcademiaIdiomas
         {
             InitializeComponent();
         }
+
+        private void MiPerfil_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show(Usuario.usuarioActual[0].NombreUsuario);
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace AcademiaIdiomas
 
         private void Principal_Load(object sender, EventArgs e)
         {
+
         }
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)

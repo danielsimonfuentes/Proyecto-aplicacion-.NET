@@ -37,6 +37,7 @@
             this.ClientSize = new System.Drawing.Size(788, 589);
             this.Name = "MiPerfil";
             this.Text = "MiPerfil";
+            this.Load += new System.EventHandler(this.MiPerfil_Load);
             this.ResumeLayout(false);
 
         }

@@ -17,6 +17,8 @@ namespace AcademiaIdiomas
         private String nombreUsuario;
         private String contrasena;
         private bool admin;
+        
+        public static List<Usuario> usuarioActual = new List<Usuario>();
 
         public static List<Usuario> listaUsuarios = new List<Usuario>();
 
