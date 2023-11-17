@@ -72,7 +72,11 @@ namespace AcademiaIdiomas
                 if (File.Exists(archivo))
                 {
                     string jsonString = File.ReadAllText(archivo);
-                    Estudiante.listaEstudiantes = JsonSerializer.Deserialize<List<Estudiante>>(jsonString);
+                    listaEstudiantes = JsonSerializer.Deserialize<List<Estudiante>>(jsonString);
+                }
+                foreach (var item in listaEstudiantes)
+                {
+                    Estudiante.listaEstudiantes.Add(item);
                 }
             }
             catch (Exception e) { }
@@ -81,12 +85,18 @@ namespace AcademiaIdiomas
 
         public static void leerEstudiantesBin(String archivo)
         {
+            List<Estudiante> listaEstudiantes = new List<Estudiante>();
             try
             {
                 Stream OpenFileStream = File.OpenRead(archivo);
                 BinaryFormatter deserializer = new BinaryFormatter();
-                Estudiante.listaEstudiantes = (List<Estudiante>)deserializer.Deserialize(OpenFileStream);
+                listaEstudiantes = (List<Estudiante>)deserializer.Deserialize(OpenFileStream);
                 OpenFileStream.Close();
+
+                foreach (var item in listaEstudiantes)
+                {
+                    Estudiante.listaEstudiantes.Add(item);
+                }
             }
             catch (Exception e)
             { }

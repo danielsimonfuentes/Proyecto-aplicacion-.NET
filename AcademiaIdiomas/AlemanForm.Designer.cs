@@ -32,6 +32,8 @@
             this.subtituloLabel = new System.Windows.Forms.Label();
             this.tituloLabel = new System.Windows.Forms.Label();
             this.ImprimirBut = new System.Windows.Forms.Button();
+            this.ordenarApebut = new System.Windows.Forms.Button();
+            this.ordenarClassBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // alemanGroupBox
@@ -73,11 +75,35 @@
             this.ImprimirBut.UseVisualStyleBackColor = true;
             this.ImprimirBut.Click += new System.EventHandler(this.ImprimirBut_Click);
             // 
+            // ordenarApebut
+            // 
+            this.ordenarApebut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordenarApebut.Location = new System.Drawing.Point(327, 715);
+            this.ordenarApebut.Name = "ordenarApebut";
+            this.ordenarApebut.Size = new System.Drawing.Size(98, 43);
+            this.ordenarApebut.TabIndex = 10;
+            this.ordenarApebut.Text = "Ordenar apellidos";
+            this.ordenarApebut.UseVisualStyleBackColor = true;
+            this.ordenarApebut.Click += new System.EventHandler(this.ordenarApebut_Click);
+            // 
+            // ordenarClassBut
+            // 
+            this.ordenarClassBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ordenarClassBut.Location = new System.Drawing.Point(514, 715);
+            this.ordenarClassBut.Name = "ordenarClassBut";
+            this.ordenarClassBut.Size = new System.Drawing.Size(98, 43);
+            this.ordenarClassBut.TabIndex = 11;
+            this.ordenarClassBut.Text = "Ordenar por clases";
+            this.ordenarClassBut.UseVisualStyleBackColor = true;
+            this.ordenarClassBut.Click += new System.EventHandler(this.ordenarClassBut_Click);
+            // 
             // AlemanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 770);
+            this.Controls.Add(this.ordenarClassBut);
+            this.Controls.Add(this.ordenarApebut);
             this.Controls.Add(this.ImprimirBut);
             this.Controls.Add(this.alemanGroupBox);
             this.Controls.Add(this.subtituloLabel);
@@ -96,5 +122,7 @@
         private System.Windows.Forms.Label subtituloLabel;
         private System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Button ImprimirBut;
+        private System.Windows.Forms.Button ordenarApebut;
+        private System.Windows.Forms.Button ordenarClassBut;
     }
 }

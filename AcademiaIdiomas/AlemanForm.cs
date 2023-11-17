@@ -56,5 +56,25 @@ namespace AcademiaIdiomas
             ControladorEstudiante.escribirEstudiantesJSON(alemanes, "alemanes.json");
             ControladorEstudiante.escribirEstudiantesBin(alemanes, "alemanes.bin");
         }
+
+        private void ordenarApebut_Click(object sender, EventArgs e)
+        {
+            this.alemanGroupBox.Controls.Clear();
+            List<Estudiante> ordenadosDesc = alemanes.OrderBy(x => x.Apellido1).ToList();
+            for (int i = 0; i < ordenadosDesc.Count; i++)
+            {
+                crearEtiqueta((Estudiante)ordenadosDesc[i], 80 + (i * 30), i);
+            }
+        }
+
+        private void ordenarClassBut_Click(object sender, EventArgs e)
+        {
+            this.alemanGroupBox.Controls.Clear();
+            List<Estudiante> ordenadosDesc = alemanes.OrderBy(x => x.Clase).ToList();
+            for (int i = 0; i < ordenadosDesc.Count; i++)
+            {
+                crearEtiqueta((Estudiante)ordenadosDesc[i], 80 + (i * 30), i);
+            }
+        }
     }
 }
