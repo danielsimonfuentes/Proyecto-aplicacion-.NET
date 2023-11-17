@@ -65,5 +65,13 @@ namespace AcademiaIdiomas
             AlemanForm Form = new AlemanForm();
             Form.Show();
         }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Usuario.usuarioActual.Clear();
+            Principal Form = new Principal();
+            Form.Show();
+            this.Hide();
+        }
     }
 }

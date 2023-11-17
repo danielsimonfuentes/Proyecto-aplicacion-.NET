@@ -31,6 +31,7 @@
             this.tituloLabel = new System.Windows.Forms.Label();
             this.subtituloLabel = new System.Windows.Forms.Label();
             this.inglesGroupBox = new System.Windows.Forms.GroupBox();
+            this.ImprimirBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tituloLabel
@@ -57,15 +58,27 @@
             // 
             this.inglesGroupBox.Location = new System.Drawing.Point(90, 198);
             this.inglesGroupBox.Name = "inglesGroupBox";
-            this.inglesGroupBox.Size = new System.Drawing.Size(570, 521);
+            this.inglesGroupBox.Size = new System.Drawing.Size(570, 498);
             this.inglesGroupBox.TabIndex = 2;
             this.inglesGroupBox.TabStop = false;
+            // 
+            // ImprimirBut
+            // 
+            this.ImprimirBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImprimirBut.Location = new System.Drawing.Point(154, 721);
+            this.ImprimirBut.Name = "ImprimirBut";
+            this.ImprimirBut.Size = new System.Drawing.Size(95, 37);
+            this.ImprimirBut.TabIndex = 3;
+            this.ImprimirBut.Text = "Imprimir";
+            this.ImprimirBut.UseVisualStyleBackColor = true;
+            this.ImprimirBut.Click += new System.EventHandler(this.ImprimirBut_Click);
             // 
             // InglesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 827);
+            this.ClientSize = new System.Drawing.Size(742, 770);
+            this.Controls.Add(this.ImprimirBut);
             this.Controls.Add(this.inglesGroupBox);
             this.Controls.Add(this.subtituloLabel);
             this.Controls.Add(this.tituloLabel);
@@ -82,5 +95,6 @@
         private System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Label subtituloLabel;
         private System.Windows.Forms.GroupBox inglesGroupBox;
+        private System.Windows.Forms.Button ImprimirBut;
     }
 }

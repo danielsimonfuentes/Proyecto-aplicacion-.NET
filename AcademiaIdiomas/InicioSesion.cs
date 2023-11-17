@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace AcademiaIdiomas
 {
@@ -33,14 +37,9 @@ namespace AcademiaIdiomas
             {
                 usuarioBox.Clear();
                 contrasenaBox.Clear();
-                foreach (var item in Usuario.listaUsuarios)
-                {
-                    if (item.NombreUsuario.Equals(usuarioBox.Text))
-                    {
-                        Usuario.usuarioActual.Clear();
-                        Usuario.usuarioActual.Add(item);
-                    }
-                }
+
+                Usuario.usuarioActual.Add(Usuario.listaUsuarios[posicion]);
+                   
                 PrincipalSesion Form = new PrincipalSesion();
                 Form.Show();
                 this.Close();
@@ -80,10 +79,13 @@ namespace AcademiaIdiomas
         private void InicioSesion_Load(object sender, EventArgs e)
         {
             cargarUsuarios();
-            cargarEstudiantes();
+            //cargarEstudiantes();
+            ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
+            ControladorEstudiante.leerEstudiantesJSON("franceses.json");
+            ControladorEstudiante.leerEstudiantesBin("alemanes.bin");
         }
 
-        private void cargarUsuarios()
+        public void cargarUsuarios()
         {
             Usuario.listaUsuarios.Add(new Usuario("Antonio", "Rodriguez", "García", "12345678A", "Calle Cualquiera 1", DateTime.Parse("6/2/1980 12:00:00 AM"), "antonio", "antonio", false));
             Usuario.listaUsuarios.Add(new Usuario("Julio", "Sanchez", "Moreno", "87651234B", "Calle Cualquiera 2", DateTime.Parse("29/9/1980 12:00:00 AM"), "julio", "julio", false));
@@ -93,7 +95,7 @@ namespace AcademiaIdiomas
             Usuario.listaUsuarios.Add(new Usuario("Daniel", "Simón", "Fuentes", "12348765F", "Calle Cualquiera 6", DateTime.Parse("9/3/2004 12:00:00 AM"), "daniel", "daniel", true));
         }
 
-        private void cargarEstudiantes()
+        public static void cargarEstudiantes()
         {
             Estudiante.listaEstudiantes.Add(new Estudiante(87654321, "María", "López", "González", 22, "francés", "B1"));
             Estudiante.listaEstudiantes.Add(new Estudiante(11112222, "Pedro", "Martínez", "Fernández", 21, "alemán", "C1"));
@@ -131,5 +133,7 @@ namespace AcademiaIdiomas
             Estudiante.listaEstudiantes.Add(new Estudiante(35791357, "Roberto", "Sánchez", "Ortega", 23, "inglés", "C1"));
             Estudiante.listaEstudiantes.Add(new Estudiante(46812468, "Laura", "Gómez", "Muñoz", 21, "inglés", "A2"));
         }
+
+        
     }
 }

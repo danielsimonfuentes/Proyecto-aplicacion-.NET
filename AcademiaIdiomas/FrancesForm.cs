@@ -16,10 +16,9 @@ namespace AcademiaIdiomas
         {
             InitializeComponent();
         }
-
+        List<Estudiante> franceses = new List<Estudiante>();
         private void FrancesForm_Load(object sender, EventArgs e)
         {
-            List<Estudiante> franceses = new List<Estudiante>();
             for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
             {
                 if (Estudiante.listaEstudiantes[i].Idioma.Equals("francés"))
@@ -45,10 +44,17 @@ namespace AcademiaIdiomas
             GrupoLbl.Size = new System.Drawing.Size(291, 20);
             GrupoLbl.TabIndex = 1;
             GrupoLbl.Tag = estudiante;
-            GrupoLbl.Text = estudiante.toString();
+            GrupoLbl.Text = estudiante.ToString();
             francesGroupBox.Controls.Add(GrupoLbl);
             posicion += 20;
             contadorNombre++;
+        }
+
+        private void ImprimirBut_Click(object sender, EventArgs e)
+        {
+            ControladorEstudiante.escribirEstudiantesXML(franceses,"franceses.xml");
+            ControladorEstudiante.escribirEstudiantesJSON(franceses, "franceses.json");
+            ControladorEstudiante.escribirEstudiantesBin(franceses, "franceses.bin");
         }
     }
 }

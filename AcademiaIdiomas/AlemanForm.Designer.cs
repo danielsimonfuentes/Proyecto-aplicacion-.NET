@@ -31,13 +31,14 @@
             this.alemanGroupBox = new System.Windows.Forms.GroupBox();
             this.subtituloLabel = new System.Windows.Forms.Label();
             this.tituloLabel = new System.Windows.Forms.Label();
+            this.ImprimirBut = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // alemanGroupBox
             // 
             this.alemanGroupBox.Location = new System.Drawing.Point(89, 199);
             this.alemanGroupBox.Name = "alemanGroupBox";
-            this.alemanGroupBox.Size = new System.Drawing.Size(570, 515);
+            this.alemanGroupBox.Size = new System.Drawing.Size(570, 498);
             this.alemanGroupBox.TabIndex = 5;
             this.alemanGroupBox.TabStop = false;
             // 
@@ -61,11 +62,23 @@
             this.tituloLabel.TabIndex = 3;
             this.tituloLabel.Text = "Bienvenido a la clase de alemán";
             // 
+            // ImprimirBut
+            // 
+            this.ImprimirBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImprimirBut.Location = new System.Drawing.Point(144, 721);
+            this.ImprimirBut.Name = "ImprimirBut";
+            this.ImprimirBut.Size = new System.Drawing.Size(95, 37);
+            this.ImprimirBut.TabIndex = 4;
+            this.ImprimirBut.Text = "Imprimir";
+            this.ImprimirBut.UseVisualStyleBackColor = true;
+            this.ImprimirBut.Click += new System.EventHandler(this.ImprimirBut_Click);
+            // 
             // AlemanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(742, 827);
+            this.ClientSize = new System.Drawing.Size(742, 770);
+            this.Controls.Add(this.ImprimirBut);
             this.Controls.Add(this.alemanGroupBox);
             this.Controls.Add(this.subtituloLabel);
             this.Controls.Add(this.tituloLabel);
@@ -82,5 +95,6 @@
         private System.Windows.Forms.GroupBox alemanGroupBox;
         private System.Windows.Forms.Label subtituloLabel;
         private System.Windows.Forms.Label tituloLabel;
+        private System.Windows.Forms.Button ImprimirBut;
     }
 }

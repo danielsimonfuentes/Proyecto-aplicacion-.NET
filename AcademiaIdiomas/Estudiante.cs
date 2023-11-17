@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AcademiaIdiomas
 {
+    [Serializable]
     public class Estudiante
     {
         private int dni;
@@ -16,8 +17,10 @@ namespace AcademiaIdiomas
         private String idioma;
         private String clase;
 
-        public static List<Estudiante> listaEstudiantes = new List<Estudiante>();  
+        public Estudiante()
+        {
 
+        }
         public Estudiante(int dni, string nombre, string apellido1, string apellido2, int edad, string idioma, string clase)
         {
             this.Dni = dni;
@@ -28,7 +31,6 @@ namespace AcademiaIdiomas
             this.Idioma = idioma;
             this.Clase = clase;
         }
-        public Estudiante() { }
 
         public int Dni { get => dni; set => dni = value; }
         public string Nombre { get => nombre; set => nombre = value; }
@@ -38,9 +40,11 @@ namespace AcademiaIdiomas
         public string Idioma { get => idioma; set => idioma = value; }
         public string Clase { get => clase; set => clase = value; }
 
-        public String toString()
+        public static List<Estudiante> listaEstudiantes = new List<Estudiante>();
+
+        public override String ToString()
         {
-            return ("DNI: " + this.dni + " - " + this.apellido1 + " " + this.apellido2 + ", " + this.nombre + " ---> " + this.idioma + ", " + this.clase);
+            return ("DNI: " + this.Dni + " - " + this.Apellido1 + " " + this.Apellido2 + ", " + this.Nombre + " ---> " + this.Idioma + ", " + this.Clase);
         }
     }
 

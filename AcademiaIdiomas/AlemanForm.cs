@@ -16,10 +16,9 @@ namespace AcademiaIdiomas
         {
             InitializeComponent();
         }
-
+        List<Estudiante> alemanes = new List<Estudiante>();
         private void AlemanForm_Load(object sender, EventArgs e)
         {
-            List<Estudiante> alemanes = new List<Estudiante>();
             for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
             {
                 if (Estudiante.listaEstudiantes[i].Idioma.Equals("alemán"))
@@ -45,10 +44,17 @@ namespace AcademiaIdiomas
             GrupoLbl.Size = new System.Drawing.Size(291, 20);
             GrupoLbl.TabIndex = 1;
             GrupoLbl.Tag = estudiante;
-            GrupoLbl.Text = estudiante.toString();
+            GrupoLbl.Text = estudiante.ToString();
             alemanGroupBox.Controls.Add(GrupoLbl);
             posicion += 20;
             contadorNombre++;
+        }
+
+        private void ImprimirBut_Click(object sender, EventArgs e)
+        {
+            ControladorEstudiante.escribirEstudiantesXML(alemanes, "alemanes.xml");
+            ControladorEstudiante.escribirEstudiantesJSON(alemanes, "alemanes.json");
+            ControladorEstudiante.escribirEstudiantesBin(alemanes, "alemanes.bin");
         }
     }
 }
