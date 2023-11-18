@@ -30,12 +30,19 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iniciarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.idiomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inglésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.francésToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alemánToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.idiomasToolStripMenuItem,
+            this.cuentaToolStripMenuItem,
             this.iniciarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -51,6 +58,44 @@
             this.iniciarSesiónToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.iniciarSesiónToolStripMenuItem.Text = "Iniciar sesión";
             this.iniciarSesiónToolStripMenuItem.Click += new System.EventHandler(this.iniciarSesiónToolStripMenuItem_Click);
+            // 
+            // cuentaToolStripMenuItem
+            // 
+            this.cuentaToolStripMenuItem.Name = "cuentaToolStripMenuItem";
+            this.cuentaToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.cuentaToolStripMenuItem.Text = "Cuenta";
+            this.cuentaToolStripMenuItem.Click += new System.EventHandler(this.cuentaToolStripMenuItem_Click_1);
+            // 
+            // idiomasToolStripMenuItem
+            // 
+            this.idiomasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.inglésToolStripMenuItem,
+            this.francésToolStripMenuItem,
+            this.alemánToolStripMenuItem});
+            this.idiomasToolStripMenuItem.Name = "idiomasToolStripMenuItem";
+            this.idiomasToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.idiomasToolStripMenuItem.Text = "Idiomas";
+            // 
+            // inglésToolStripMenuItem
+            // 
+            this.inglésToolStripMenuItem.Name = "inglésToolStripMenuItem";
+            this.inglésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.inglésToolStripMenuItem.Text = "Inglés";
+            this.inglésToolStripMenuItem.Click += new System.EventHandler(this.inglésToolStripMenuItem_Click);
+            // 
+            // francésToolStripMenuItem
+            // 
+            this.francésToolStripMenuItem.Name = "francésToolStripMenuItem";
+            this.francésToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.francésToolStripMenuItem.Text = "Francés";
+            this.francésToolStripMenuItem.Click += new System.EventHandler(this.francésToolStripMenuItem_Click);
+            // 
+            // alemánToolStripMenuItem
+            // 
+            this.alemánToolStripMenuItem.Name = "alemánToolStripMenuItem";
+            this.alemánToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alemánToolStripMenuItem.Text = "Alemán";
+            this.alemánToolStripMenuItem.Click += new System.EventHandler(this.alemánToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -74,5 +119,10 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem iniciarSesiónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cuentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem idiomasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inglésToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem francésToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alemánToolStripMenuItem;
     }
 }
