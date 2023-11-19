@@ -47,7 +47,7 @@ namespace AcademiaIdiomas
 
         private void cuentaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("¡Debes iniciar sesión antes!");
+            MessageBox.Show("¡Debes iniciar sesión antes!", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void inglésToolStripMenuItem_Click(object sender, EventArgs e)

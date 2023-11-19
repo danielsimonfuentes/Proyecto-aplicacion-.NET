@@ -32,7 +32,7 @@ namespace AcademiaIdiomas
             this.FechaNac = fechaNac;
             this.nombreUsuario = usuario;
             this.Contrasena = contrasena;
-            this.admin = admin;
+            this.Admin = admin;
         }
         public Usuario()
         {
@@ -46,6 +46,17 @@ namespace AcademiaIdiomas
         public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
         public string Contrasena { get => contrasena; set => contrasena = value; }
+        public bool Admin { get => admin; set => admin = value; }
+
+        public override String ToString()
+        {
+            String administrador = "";
+            if (admin)
+            {
+                administrador = " -> ADMIN";
+            }
+            return (nombreUsuario + " - " + nombre + " " + apellido1 + " " + apellido2 + " " + dni + administrador);
+        }
     }
 
 }

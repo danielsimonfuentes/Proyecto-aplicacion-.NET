@@ -28,21 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.perfilPictureBox = new System.Windows.Forms.PictureBox();
             this.datosGroupBox = new System.Windows.Forms.GroupBox();
             this.perfilGroupBox = new System.Windows.Forms.GroupBox();
+            this.adminBut = new System.Windows.Forms.Button();
+            this.perfilPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.perfilPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // perfilPictureBox
-            // 
-            this.perfilPictureBox.Image = global::AcademiaIdiomas.Properties.Resources.blank_profile_picture_973460_1280_580x580;
-            this.perfilPictureBox.Location = new System.Drawing.Point(35, 49);
-            this.perfilPictureBox.Name = "perfilPictureBox";
-            this.perfilPictureBox.Size = new System.Drawing.Size(228, 236);
-            this.perfilPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.perfilPictureBox.TabIndex = 0;
-            this.perfilPictureBox.TabStop = false;
             // 
             // datosGroupBox
             // 
@@ -60,11 +51,33 @@
             this.perfilGroupBox.TabIndex = 2;
             this.perfilGroupBox.TabStop = false;
             // 
+            // adminBut
+            // 
+            this.adminBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminBut.Location = new System.Drawing.Point(361, 307);
+            this.adminBut.Name = "adminBut";
+            this.adminBut.Size = new System.Drawing.Size(193, 38);
+            this.adminBut.TabIndex = 3;
+            this.adminBut.Text = "Administrar";
+            this.adminBut.UseVisualStyleBackColor = true;
+            this.adminBut.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // perfilPictureBox
+            // 
+            this.perfilPictureBox.Image = global::AcademiaIdiomas.Properties.Resources.blank_profile_picture_973460_1280_580x580;
+            this.perfilPictureBox.Location = new System.Drawing.Point(35, 49);
+            this.perfilPictureBox.Name = "perfilPictureBox";
+            this.perfilPictureBox.Size = new System.Drawing.Size(228, 236);
+            this.perfilPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.perfilPictureBox.TabIndex = 0;
+            this.perfilPictureBox.TabStop = false;
+            // 
             // MiPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 453);
+            this.ClientSize = new System.Drawing.Size(703, 440);
+            this.Controls.Add(this.adminBut);
             this.Controls.Add(this.perfilGroupBox);
             this.Controls.Add(this.datosGroupBox);
             this.Controls.Add(this.perfilPictureBox);
@@ -81,5 +94,6 @@
         private System.Windows.Forms.PictureBox perfilPictureBox;
         private System.Windows.Forms.GroupBox datosGroupBox;
         private System.Windows.Forms.GroupBox perfilGroupBox;
+        private System.Windows.Forms.Button adminBut;
     }
 }
