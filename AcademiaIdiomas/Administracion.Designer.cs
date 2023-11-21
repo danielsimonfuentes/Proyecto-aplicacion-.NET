@@ -73,6 +73,7 @@
             this.estudiantesBut.TabIndex = 4;
             this.estudiantesBut.Text = "Administrar...";
             this.estudiantesBut.UseVisualStyleBackColor = true;
+            this.estudiantesBut.Click += new System.EventHandler(this.estudiantesBut_Click);
             // 
             // estudiantesLabel
             // 

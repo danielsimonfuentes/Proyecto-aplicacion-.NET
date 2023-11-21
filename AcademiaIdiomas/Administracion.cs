@@ -27,5 +27,11 @@ namespace AcademiaIdiomas
         {
 
         }
+
+        private void estudiantesBut_Click(object sender, EventArgs e)
+        {
+            AdministracionEstudiantes Form = new AdministracionEstudiantes();
+            Form.Show();
+        }
     }
 }

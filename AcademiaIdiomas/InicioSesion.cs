@@ -42,7 +42,7 @@ namespace AcademiaIdiomas
                    
                 PrincipalSesion Form = new PrincipalSesion();
                 Form.Show();
-                this.Close();
+                this.Hide();
             }
             else
             {
@@ -61,7 +61,8 @@ namespace AcademiaIdiomas
 
         private void InicioSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            Principal Form = new Principal();
+            Form.Show();
         }
 
         private void InicioSesion_FormClosed(object sender, FormClosedEventArgs e)
@@ -73,7 +74,7 @@ namespace AcademiaIdiomas
         {
             Principal Form = new Principal();
             Form.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void InicioSesion_Load(object sender, EventArgs e)

@@ -80,6 +80,12 @@
     <Compile Include="Administracion.Designer.cs">
       <DependentUpon>Administracion.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdministracionEstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdministracionEstudiantes.Designer.cs">
+      <DependentUpon>AdministracionEstudiantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdministracionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,9 @@
     <Compile Include="Usuario.cs" />
     <EmbeddedResource Include="Administracion.resx">
       <DependentUpon>Administracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdministracionEstudiantes.resx">
+      <DependentUpon>AdministracionEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdministracionUsuarios.resx">
       <DependentUpon>AdministracionUsuarios.cs</DependentUpon>

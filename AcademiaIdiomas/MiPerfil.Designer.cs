@@ -30,8 +30,8 @@
         {
             this.datosGroupBox = new System.Windows.Forms.GroupBox();
             this.perfilGroupBox = new System.Windows.Forms.GroupBox();
-            this.adminBut = new System.Windows.Forms.Button();
             this.perfilPictureBox = new System.Windows.Forms.PictureBox();
+            this.adminBut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.perfilPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +51,16 @@
             this.perfilGroupBox.TabIndex = 2;
             this.perfilGroupBox.TabStop = false;
             // 
+            // perfilPictureBox
+            // 
+            this.perfilPictureBox.Image = global::AcademiaIdiomas.Properties.Resources.blank_profile_picture_973460_1280_580x580;
+            this.perfilPictureBox.Location = new System.Drawing.Point(35, 49);
+            this.perfilPictureBox.Name = "perfilPictureBox";
+            this.perfilPictureBox.Size = new System.Drawing.Size(228, 236);
+            this.perfilPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.perfilPictureBox.TabIndex = 0;
+            this.perfilPictureBox.TabStop = false;
+            // 
             // adminBut
             // 
             this.adminBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -61,16 +71,6 @@
             this.adminBut.Text = "Administrar";
             this.adminBut.UseVisualStyleBackColor = true;
             this.adminBut.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // perfilPictureBox
-            // 
-            this.perfilPictureBox.Image = global::AcademiaIdiomas.Properties.Resources.blank_profile_picture_973460_1280_580x580;
-            this.perfilPictureBox.Location = new System.Drawing.Point(35, 49);
-            this.perfilPictureBox.Name = "perfilPictureBox";
-            this.perfilPictureBox.Size = new System.Drawing.Size(228, 236);
-            this.perfilPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.perfilPictureBox.TabIndex = 0;
-            this.perfilPictureBox.TabStop = false;
             // 
             // MiPerfil
             // 

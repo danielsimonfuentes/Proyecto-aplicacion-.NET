@@ -34,10 +34,24 @@ namespace AcademiaIdiomas
         {
             
         }
-
+        private bool confirma = false;
         private void Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            if (!confirma)
+            {
+                DialogResult dialogo = MessageBox.Show("Desea cerrar el programa?", "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogo == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    confirma = true;
+                    Application.ExitThread();
+
+                }
+            }
         }
 
         private void cuentaToolStripMenuItem_Click(object sender, EventArgs e)

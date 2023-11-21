@@ -35,7 +35,7 @@ namespace AcademiaIdiomas
            System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)
            (0)));
             checkBox.Location = new System.Drawing.Point(50, posicion);
-            checkBox.Name = "lblCurso" + contadorNombre;
+            checkBox.Name = "Usuario" + contadorNombre;
             checkBox.Size = new System.Drawing.Size(291, 20);
             checkBox.TabIndex = 1;
             checkBox.Tag = user;

@@ -42,7 +42,7 @@ namespace AcademiaIdiomas
                 else
                 {
                     confirma = true;
-                    Application.Exit();
+                    Application.ExitThread();
 
                 }
             }
