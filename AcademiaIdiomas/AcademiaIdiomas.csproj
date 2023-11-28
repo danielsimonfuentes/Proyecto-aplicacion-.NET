@@ -99,6 +99,7 @@
       <DependentUpon>AlemanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ControladorEstudiante.cs" />
+    <Compile Include="ControladorUsuario.cs" />
     <Compile Include="Estudiante.cs" />
     <Compile Include="FrancesForm.cs">
       <SubType>Form</SubType>
@@ -117,6 +118,12 @@
     </Compile>
     <Compile Include="InicioSesion.Designer.cs">
       <DependentUpon>InicioSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatriculacionEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatriculacionEstudiante.Designer.cs">
+      <DependentUpon>MatriculacionEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="MiPerfil.cs">
       <SubType>Form</SubType>
@@ -165,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatriculacionEstudiante.resx">
+      <DependentUpon>MatriculacionEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MiPerfil.resx">
       <DependentUpon>MiPerfil.cs</DependentUpon>

@@ -9,7 +9,7 @@ namespace AcademiaIdiomas
     [Serializable]
     public class Estudiante
     {
-        private int dni;
+        private String dni;
         private String nombre;
         private String apellido1;
         private String apellido2;
@@ -21,7 +21,7 @@ namespace AcademiaIdiomas
         {
 
         }
-        public Estudiante(int dni, string nombre, string apellido1, string apellido2, int edad, string idioma, string clase)
+        public Estudiante(String dni, string nombre, string apellido1, string apellido2, int edad, string idioma, string clase)
         {
             this.Dni = dni;
             this.Nombre = nombre;
@@ -32,7 +32,7 @@ namespace AcademiaIdiomas
             this.Clase = clase;
         }
 
-        public int Dni { get => dni; set => dni = value; }
+        public String Dni { get => dni; set => dni = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Apellido1 { get => apellido1; set => apellido1 = value; }
         public string Apellido2 { get => apellido2; set => apellido2 = value; }

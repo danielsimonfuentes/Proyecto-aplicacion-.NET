@@ -23,6 +23,7 @@ namespace AcademiaIdiomas
             InicioSesion Form = new InicioSesion();
             Form.Show();
             this.Hide();
+            this.Dispose();
         }
 
         private void Principal_Load(object sender, EventArgs e)

@@ -50,7 +50,10 @@ namespace AcademiaIdiomas
 
         private void matricularBut_Click(object sender, EventArgs e)
         {
-
+            MatriculacionEstudiante Form = new MatriculacionEstudiante();
+            Form.Show();
+            this.Hide();
+            this.Dispose();
         }
 
         private void filtrarBut_Click(object sender, EventArgs e)
@@ -74,6 +77,7 @@ namespace AcademiaIdiomas
 
         private void eliminarBut_Click(object sender, EventArgs e)
         {
+            List<Estudiante> listaActual = new List<Estudiante>();
             foreach (Control control in estudiantesPanel.Controls)
             {
                 if (control is CheckBox checkBox)
@@ -85,12 +89,17 @@ namespace AcademiaIdiomas
                          Estudiante.listaEstudiantes.Remove(est);
                         
                     }
+                    else
+                    {
+                        listaActual.Add(est);
+                    }
                 }
+                
             }
             estudiantesPanel.Controls.Clear();
-            for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
+            for (int i = 0; i < listaActual.Count; i++)
             {
-                crearEtiqueta(Estudiante.listaEstudiantes[i], 50 + (i * 30), i);
+                crearEtiqueta(listaActual[i], 50 + (i * 30), i);
             }
         }
     }

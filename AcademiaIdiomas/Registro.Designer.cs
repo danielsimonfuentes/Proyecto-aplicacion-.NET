@@ -76,7 +76,7 @@
             this.apellido1Box.Location = new System.Drawing.Point(323, 165);
             this.apellido1Box.Name = "apellido1Box";
             this.apellido1Box.Size = new System.Drawing.Size(107, 20);
-            this.apellido1Box.TabIndex = 13;
+            this.apellido1Box.TabIndex = 1;
             // 
             // nombreLabel
             // 
@@ -93,7 +93,7 @@
             this.nombreBox.Location = new System.Drawing.Point(323, 124);
             this.nombreBox.Name = "nombreBox";
             this.nombreBox.Size = new System.Drawing.Size(107, 20);
-            this.nombreBox.TabIndex = 11;
+            this.nombreBox.TabIndex = 0;
             // 
             // dniLabel
             // 
@@ -110,7 +110,7 @@
             this.dniBox.Location = new System.Drawing.Point(323, 250);
             this.dniBox.Name = "dniBox";
             this.dniBox.Size = new System.Drawing.Size(107, 20);
-            this.dniBox.TabIndex = 17;
+            this.dniBox.TabIndex = 3;
             // 
             // apellido2Label
             // 
@@ -127,7 +127,7 @@
             this.apellido2Box.Location = new System.Drawing.Point(323, 208);
             this.apellido2Box.Name = "apellido2Box";
             this.apellido2Box.Size = new System.Drawing.Size(107, 20);
-            this.apellido2Box.TabIndex = 15;
+            this.apellido2Box.TabIndex = 2;
             // 
             // Contrasena1Label
             // 
@@ -145,7 +145,7 @@
             this.contrasena1Box.Name = "contrasena1Box";
             this.contrasena1Box.PasswordChar = '*';
             this.contrasena1Box.Size = new System.Drawing.Size(107, 20);
-            this.contrasena1Box.TabIndex = 25;
+            this.contrasena1Box.TabIndex = 7;
             // 
             // nombreUsuarioLabel
             // 
@@ -162,7 +162,7 @@
             this.nombreUsuarioBox.Location = new System.Drawing.Point(323, 399);
             this.nombreUsuarioBox.Name = "nombreUsuarioBox";
             this.nombreUsuarioBox.Size = new System.Drawing.Size(107, 20);
-            this.nombreUsuarioBox.TabIndex = 23;
+            this.nombreUsuarioBox.TabIndex = 6;
             // 
             // fechaNacLabel
             // 
@@ -189,14 +189,14 @@
             this.domicilioBox.Location = new System.Drawing.Point(323, 292);
             this.domicilioBox.Name = "domicilioBox";
             this.domicilioBox.Size = new System.Drawing.Size(107, 20);
-            this.domicilioBox.TabIndex = 19;
+            this.domicilioBox.TabIndex = 4;
             // 
             // fechaNacDateTimePicker
             // 
             this.fechaNacDateTimePicker.Location = new System.Drawing.Point(323, 333);
             this.fechaNacDateTimePicker.Name = "fechaNacDateTimePicker";
             this.fechaNacDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.fechaNacDateTimePicker.TabIndex = 27;
+            this.fechaNacDateTimePicker.TabIndex = 5;
             // 
             // contrasena2Label
             // 
@@ -214,7 +214,7 @@
             this.contrasena2Box.Name = "contrasena2Box";
             this.contrasena2Box.PasswordChar = '*';
             this.contrasena2Box.Size = new System.Drawing.Size(107, 20);
-            this.contrasena2Box.TabIndex = 28;
+            this.contrasena2Box.TabIndex = 8;
             // 
             // cancelBut
             // 
@@ -269,6 +269,7 @@
             this.MaximizeBox = false;
             this.Name = "Registro";
             this.Text = "Registro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registro_FormClosing);
             this.Load += new System.EventHandler(this.Registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

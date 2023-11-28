@@ -116,14 +116,18 @@ namespace AcademiaIdiomas
             {
                 Usuario.listaUsuarios.Add(new Usuario(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value,nombreUsuarioBox.Text,contrasena1Box.Text, false));
                 this.Close();
-                InicioSesion Form = new InicioSesion();
-                Form.ShowDialog();
             }
         }
 
         private void Registro_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Registro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            InicioSesion Form = new InicioSesion();
+            Form.Show();
         }
     }
 }

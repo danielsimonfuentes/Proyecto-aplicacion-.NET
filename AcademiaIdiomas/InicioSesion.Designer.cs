@@ -45,7 +45,7 @@
             this.acceptBut.Location = new System.Drawing.Point(84, 262);
             this.acceptBut.Name = "acceptBut";
             this.acceptBut.Size = new System.Drawing.Size(103, 36);
-            this.acceptBut.TabIndex = 0;
+            this.acceptBut.TabIndex = 2;
             this.acceptBut.Text = "Aceptar";
             this.acceptBut.UseVisualStyleBackColor = true;
             this.acceptBut.Click += new System.EventHandler(this.acceptBut_Click);
@@ -55,7 +55,7 @@
             this.usuarioBox.Location = new System.Drawing.Point(231, 107);
             this.usuarioBox.Name = "usuarioBox";
             this.usuarioBox.Size = new System.Drawing.Size(107, 20);
-            this.usuarioBox.TabIndex = 2;
+            this.usuarioBox.TabIndex = 0;
             // 
             // usuarioLabel
             // 
@@ -83,7 +83,7 @@
             this.contrasenaBox.Name = "contrasenaBox";
             this.contrasenaBox.PasswordChar = '*';
             this.contrasenaBox.Size = new System.Drawing.Size(107, 20);
-            this.contrasenaBox.TabIndex = 4;
+            this.contrasenaBox.TabIndex = 1;
             // 
             // inicioLabel
             // 
@@ -154,7 +154,7 @@
             this.Controls.Add(this.usuarioLabel);
             this.Controls.Add(this.usuarioBox);
             this.Controls.Add(this.acceptBut);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "InicioSesion";
             this.Text = "InicioSesion";

@@ -72,6 +72,7 @@ namespace AcademiaIdiomas
             Principal Form = new Principal();
             Form.Show();
             this.Hide();
+            this.Dispose();
         }
     }
 }
