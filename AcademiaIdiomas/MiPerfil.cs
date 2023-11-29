@@ -79,7 +79,7 @@ namespace AcademiaIdiomas
             }
             else
             {
-                MessageBox.Show("No puedes acceder a esta función si no eres administrador");
+                MessageBox.Show("No puedes acceder a esta función si no eres administrador", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

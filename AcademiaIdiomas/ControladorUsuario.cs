@@ -14,33 +14,50 @@ namespace AcademiaIdiomas
             String line;
             try
             {
-                //Pass the file path and file name to the StreamReader constructor
                 StreamReader sr = new StreamReader("usuarios.txt");
-                //Read the first line of text
-                line = sr.ReadLine();
-                //Continue to read until you reach end of file
-                while (line != null)
+                while ((line = sr.ReadLine()) != null)
                 {
-                    //write the line to console window
                     Console.WriteLine(line);
-                    //Read the next line
-                    line = sr.ReadLine();
-                    String[] lista;
-                    lista = line.Split(',');
-                    bool admin;
-                    if (lista[8].Equals("true"))
+                    if (!string.IsNullOrWhiteSpace(line))
                     {
-                        admin = true;
+                        String[] lista = line.Split(',');
+                        if (lista.Length >= 9)
+                        {
+                            bool admin;
+                            if (lista[8].Equals("True"))
+                            {
+                                admin = true;
+                            }
+                            else
+                            {
+                                admin = false;
+                            }
+
+                            Usuario.listaUsuarios.Add(new Usuario(lista[0], lista[1], lista[2], lista[3], lista[4], DateTime.Parse(lista[5]), lista[6], lista[7], admin));
+                        }
                     }
-                    else
-                    {
-                        admin = false;
-                    }
-                    Usuario.listaUsuarios.Add(new Usuario(lista[0], lista[1], lista[2], lista[3], lista[4], DateTime.Parse(lista[5]), lista[6], lista[7], admin));
                 }
-                //close the file
                 sr.Close();
-                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception: " + e.Message);
+            }
+        }
+
+        public static void escribirUsuarioTXT()
+        {
+            try
+            {
+                //Pass the filepath and filename to the StreamWriter Constructor
+                StreamWriter sw = new StreamWriter("usuarios.txt");
+                //Write a line of text
+                foreach (var item in Usuario.listaUsuarios)
+                {
+                    sw.WriteLine(item.toString2());
+                }
+                //Close the file
+                sw.Close();
             }
             catch (Exception e)
             {

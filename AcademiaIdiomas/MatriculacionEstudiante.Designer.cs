@@ -184,6 +184,7 @@
             this.idiomaComboBox.Name = "idiomaComboBox";
             this.idiomaComboBox.Size = new System.Drawing.Size(107, 21);
             this.idiomaComboBox.TabIndex = 5;
+            this.idiomaComboBox.Click += new System.EventHandler(this.idiomaComboBox_Click);
             // 
             // claseComboBox
             // 
@@ -199,6 +200,7 @@
             this.claseComboBox.Name = "claseComboBox";
             this.claseComboBox.Size = new System.Drawing.Size(107, 21);
             this.claseComboBox.TabIndex = 7;
+            this.claseComboBox.Click += new System.EventHandler(this.claseComboBox_Click);
             // 
             // matriculacionLabel
             // 

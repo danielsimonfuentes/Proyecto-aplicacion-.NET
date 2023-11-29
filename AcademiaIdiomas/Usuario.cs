@@ -57,6 +57,12 @@ namespace AcademiaIdiomas
             }
             return (nombreUsuario + " - " + nombre + " " + apellido1 + " " + apellido2 + " " + dni + administrador);
         }
+
+        public String toString2()
+        {
+            return (nombre + "," + apellido1 + "," + apellido2 + "," + dni + "," + domicilio + "," + fechaNac + "," + nombreUsuario + "," + contrasena + "," + admin);
+        }
+
     }
 
 }

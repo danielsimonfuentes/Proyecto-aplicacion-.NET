@@ -65,6 +65,26 @@ namespace AcademiaIdiomas
             {
                 edadUpDown.BackColor = Color.White;
             }
+            if (idiomaComboBox.Text.Equals("") && !idiomaComboBox.Text.Equals("inglés") && !idiomaComboBox.Text.Equals("francés") && !idiomaComboBox.Text.Equals("alemán"))
+            {
+                idiomaComboBox.BackColor = Color.Red;
+                MessageBox.Show("Debes asignar un idioma válido al estudiante", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                validar = false;
+            }
+            else
+            {
+                idiomaComboBox.BackColor = Color.White;
+            }
+            if (claseComboBox.Text.Equals("") && !claseComboBox.Text.Equals("A1") && !claseComboBox.Text.Equals("A2") && !claseComboBox.Text.Equals("B1") && !claseComboBox.Text.Equals("B2") && !claseComboBox.Text.Equals("C1") && !claseComboBox.Text.Equals("C2"))
+            {
+                claseComboBox.BackColor = Color.Red;
+                MessageBox.Show("Debes asignar una clase válida al estudiante", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                validar = false;
+            }
+            else
+            {
+                claseComboBox.BackColor = Color.White;
+            }
 
             if (validar)
             {
@@ -76,6 +96,16 @@ namespace AcademiaIdiomas
         private void MatriculacionEstudiante_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void idiomaComboBox_Click(object sender, EventArgs e)
+        {
+            idiomaComboBox.BackColor = Color.White;
+        }
+
+        private void claseComboBox_Click(object sender, EventArgs e)
+        {
+            claseComboBox.BackColor = Color.White;
         }
     }
 }
