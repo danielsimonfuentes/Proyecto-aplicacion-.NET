@@ -51,7 +51,8 @@
             // cancelBut
             // 
             this.cancelBut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelBut.Location = new System.Drawing.Point(299, 481);
+            this.cancelBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelBut.Location = new System.Drawing.Point(299, 463);
             this.cancelBut.Name = "cancelBut";
             this.cancelBut.Size = new System.Drawing.Size(103, 36);
             this.cancelBut.TabIndex = 51;
@@ -60,7 +61,8 @@
             // 
             // acceptBut
             // 
-            this.acceptBut.Location = new System.Drawing.Point(140, 481);
+            this.acceptBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.acceptBut.Location = new System.Drawing.Point(140, 463);
             this.acceptBut.Name = "acceptBut";
             this.acceptBut.Size = new System.Drawing.Size(103, 36);
             this.acceptBut.TabIndex = 50;
@@ -219,7 +221,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.CancelButton = this.cancelBut;
-            this.ClientSize = new System.Drawing.Size(553, 568);
+            this.ClientSize = new System.Drawing.Size(553, 547);
             this.Controls.Add(this.matriculacionLabel);
             this.Controls.Add(this.claseComboBox);
             this.Controls.Add(this.idiomaComboBox);

@@ -45,6 +45,7 @@
             // 
             // perfilGroupBox
             // 
+            this.perfilGroupBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.perfilGroupBox.Location = new System.Drawing.Point(35, 291);
             this.perfilGroupBox.Name = "perfilGroupBox";
             this.perfilGroupBox.Size = new System.Drawing.Size(228, 54);

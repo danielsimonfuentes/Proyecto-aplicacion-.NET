@@ -43,6 +43,7 @@
             // 
             // acceptBut
             // 
+            this.acceptBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.acceptBut.Location = new System.Drawing.Point(84, 262);
             this.acceptBut.Name = "acceptBut";
             this.acceptBut.Size = new System.Drawing.Size(103, 36);
@@ -99,6 +100,7 @@
             // cancelBut
             // 
             this.cancelBut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelBut.Location = new System.Drawing.Point(235, 262);
             this.cancelBut.Name = "cancelBut";
             this.cancelBut.Size = new System.Drawing.Size(103, 36);
@@ -129,9 +131,10 @@
             // accederBut
             // 
             this.accederBut.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.accederBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accederBut.Location = new System.Drawing.Point(159, 322);
             this.accederBut.Name = "accederBut";
-            this.accederBut.Size = new System.Drawing.Size(100, 34);
+            this.accederBut.Size = new System.Drawing.Size(100, 40);
             this.accederBut.TabIndex = 10;
             this.accederBut.Text = "Accede sin cuenta";
             this.accederBut.UseVisualStyleBackColor = true;
