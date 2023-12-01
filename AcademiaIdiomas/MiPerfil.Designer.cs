@@ -76,13 +76,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(703, 440);
             this.Controls.Add(this.adminBut);
             this.Controls.Add(this.perfilGroupBox);
             this.Controls.Add(this.datosGroupBox);
             this.Controls.Add(this.perfilPictureBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "MiPerfil";
-            this.Text = "MiPerfil";
+            this.Text = "Mi Perfil";
             this.Load += new System.EventHandler(this.MiPerfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.perfilPictureBox)).EndInit();
             this.ResumeLayout(false);

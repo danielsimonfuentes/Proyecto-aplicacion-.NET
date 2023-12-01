@@ -11,6 +11,7 @@ namespace AcademiaIdiomas
     {
         public static void leerUsuarioTXT()
         {
+            Usuario.listaUsuarios.Clear();
             String line;
             try
             {

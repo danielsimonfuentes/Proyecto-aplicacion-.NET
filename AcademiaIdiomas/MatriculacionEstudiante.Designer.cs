@@ -217,7 +217,7 @@
             this.AcceptButton = this.acceptBut;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.CancelButton = this.cancelBut;
             this.ClientSize = new System.Drawing.Size(553, 568);
             this.Controls.Add(this.matriculacionLabel);
@@ -237,8 +237,10 @@
             this.Controls.Add(this.apellido1Box);
             this.Controls.Add(this.nombreLabel);
             this.Controls.Add(this.nombreBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "MatriculacionEstudiante";
-            this.Text = "MatriculacionEstudiante";
+            this.Text = "Matriculación de Estudiante";
             this.Load += new System.EventHandler(this.MatriculacionEstudiante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.edadUpDown)).EndInit();
             this.ResumeLayout(false);

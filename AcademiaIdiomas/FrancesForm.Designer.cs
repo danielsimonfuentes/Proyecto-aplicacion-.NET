@@ -38,6 +38,7 @@
             // 
             // francesGroupBox
             // 
+            this.francesGroupBox.BackColor = System.Drawing.Color.FloralWhite;
             this.francesGroupBox.Location = new System.Drawing.Point(88, 197);
             this.francesGroupBox.Name = "francesGroupBox";
             this.francesGroupBox.Size = new System.Drawing.Size(570, 501);
@@ -101,6 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(742, 770);
             this.Controls.Add(this.ordenarClassBut);
             this.Controls.Add(this.ordenarApebut);
@@ -108,8 +110,10 @@
             this.Controls.Add(this.francesGroupBox);
             this.Controls.Add(this.subtituloLabel);
             this.Controls.Add(this.tituloLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "FrancesForm";
-            this.Text = "FrancesForm";
+            this.Text = "Clase de Francés";
             this.Load += new System.EventHandler(this.FrancesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -60,18 +60,25 @@ namespace AcademiaIdiomas
         {
             List<Estudiante> estudiantes = new List<Estudiante>();
             String eleccion = idiomaComboBox.Text;
-            for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
+            if (eleccion != "inglés" && eleccion != "francés" && eleccion != "alemán")
             {
-                if (Estudiante.listaEstudiantes[i].Idioma.Equals(eleccion))
-                {
-                    estudiantes.Add(Estudiante.listaEstudiantes[i]);
-                }
+                MessageBox.Show("No puedes filtrar por ese campo, pueba a escoger otro", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            
-            estudiantesPanel.Controls.Clear();
-            for (int i = 0; i < estudiantes.Count; i++)
+            else
             {
-                crearEtiqueta(estudiantes[i], 50 + (i * 30), i);
+                for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
+                {
+                    if (Estudiante.listaEstudiantes[i].Idioma.Equals(eleccion))
+                    {
+                        estudiantes.Add(Estudiante.listaEstudiantes[i]);
+                    }
+                }
+
+                estudiantesPanel.Controls.Clear();
+                for (int i = 0; i < estudiantes.Count; i++)
+                {
+                    crearEtiqueta(estudiantes[i], 50 + (i * 30), i);
+                }
             }
         }
 

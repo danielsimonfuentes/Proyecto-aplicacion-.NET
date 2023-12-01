@@ -89,14 +89,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(497, 316);
             this.Controls.Add(this.estudiantesBut);
             this.Controls.Add(this.estudiantesLabel);
             this.Controls.Add(this.usersBut);
             this.Controls.Add(this.usersLabel);
             this.Controls.Add(this.adminLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "Administracion";
-            this.Text = "Administracion";
+            this.Text = "Administración";
             this.Load += new System.EventHandler(this.Administracion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

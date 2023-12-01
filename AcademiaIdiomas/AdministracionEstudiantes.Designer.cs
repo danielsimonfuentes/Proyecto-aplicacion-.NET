@@ -84,6 +84,7 @@
             // estudiantesPanel
             // 
             this.estudiantesPanel.AutoScroll = true;
+            this.estudiantesPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.estudiantesPanel.Location = new System.Drawing.Point(44, 103);
             this.estudiantesPanel.Name = "estudiantesPanel";
             this.estudiantesPanel.Size = new System.Drawing.Size(568, 477);
@@ -115,6 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(661, 702);
             this.Controls.Add(this.matricularBut);
             this.Controls.Add(this.filtrarBut);
@@ -123,8 +125,10 @@
             this.Controls.Add(this.idiomaComboBox);
             this.Controls.Add(this.eliminarBut);
             this.Controls.Add(this.adminEstudiantesLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AdministracionEstudiantes";
-            this.Text = "AdministracionEstudiantes";
+            this.Text = "Administración de Estudiantes";
             this.Load += new System.EventHandler(this.AdministracionEstudiantes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -38,6 +38,7 @@
             // usersGroupBox
             // 
             this.usersGroupBox.AutoSize = true;
+            this.usersGroupBox.BackColor = System.Drawing.Color.GhostWhite;
             this.usersGroupBox.Location = new System.Drawing.Point(44, 90);
             this.usersGroupBox.Name = "usersGroupBox";
             this.usersGroupBox.Size = new System.Drawing.Size(577, 413);
@@ -91,14 +92,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(668, 623);
             this.Controls.Add(this.noadminBut);
             this.Controls.Add(this.adminBut);
             this.Controls.Add(this.eliminarBut);
             this.Controls.Add(this.adminUsersLabel);
             this.Controls.Add(this.usersGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AdministracionUsuarios";
-            this.Text = "AdministracionUsuarios";
+            this.Text = "Administración de Usuarios";
             this.Load += new System.EventHandler(this.AdministracionUsuarios_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

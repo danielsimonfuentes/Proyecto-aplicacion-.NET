@@ -38,6 +38,7 @@
             // 
             // alemanGroupBox
             // 
+            this.alemanGroupBox.BackColor = System.Drawing.Color.FloralWhite;
             this.alemanGroupBox.Location = new System.Drawing.Point(89, 199);
             this.alemanGroupBox.Name = "alemanGroupBox";
             this.alemanGroupBox.Size = new System.Drawing.Size(570, 498);
@@ -101,6 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(746, 770);
             this.Controls.Add(this.ordenarClassBut);
             this.Controls.Add(this.ordenarApebut);
@@ -108,8 +110,10 @@
             this.Controls.Add(this.alemanGroupBox);
             this.Controls.Add(this.subtituloLabel);
             this.Controls.Add(this.tituloLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "AlemanForm";
-            this.Text = "AlemanForm";
+            this.Text = "Clase de Alemán";
             this.Load += new System.EventHandler(this.AlemanForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

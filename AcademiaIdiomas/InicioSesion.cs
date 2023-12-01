@@ -140,11 +140,11 @@ namespace AcademiaIdiomas
             Estudiante.listaEstudiantes.Add(new Estudiante("35791357R", "Roberto", "Sánchez", "Ortega", 23, "inglés", "C1"));
             Estudiante.listaEstudiantes.Add(new Estudiante("46812468E", "Laura", "Gómez", "Muñoz", 21, "inglés", "A2"));
             /*Antonio,Rodriguez,García,12345678A,Calle Cualquiera 1,6/2/1980 12:00:00 AM,antonio,antonio,false
-Julio,Sanchez,Moreno,87651234B,Calle Cualquiera 2,29/9/1980 12:00:00 AM,julio,julio,false
-José,González,Ruiz,43215678C,Calle Cualquiera 3,22/12/1980 12:00:00 AM,jose,jose,false
-Luis,Lopez,Martinez,56781234D,Calle Cualquiera 4,11/7/1980 12:00:00 AM,luis,luis,false
-Fernando,Marcos,Martín,87654321E,Calle Cualquiera 5,17/8/1986 12:00:00 AM,fernando,fernando,true
-Daniel,Simón,Fuentes,12348765F,Calle Cualquiera 6,9/3/2004 12:00:00 AM,daniel,daniel,true*/
+            Julio,Sanchez,Moreno,87651234B,Calle Cualquiera 2,29/9/1980 12:00:00 AM,julio,julio,false
+            José,González,Ruiz,43215678C,Calle Cualquiera 3,22/12/1980 12:00:00 AM,jose,jose,false
+            Luis,Lopez,Martinez,56781234D,Calle Cualquiera 4,11/7/1980 12:00:00 AM,luis,luis,false
+            Fernando,Marcos,Martín,87654321E,Calle Cualquiera 5,17/8/1986 12:00:00 AM,fernando,fernando,true
+            Daniel,Simón,Fuentes,12348765F,Calle Cualquiera 6,9/3/2004 12:00:00 AM,daniel,daniel,true*/
         }
 
 

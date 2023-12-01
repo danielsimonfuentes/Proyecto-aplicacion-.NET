@@ -58,6 +58,7 @@
             // 
             // inglesGroupBox
             // 
+            this.inglesGroupBox.BackColor = System.Drawing.Color.FloralWhite;
             this.inglesGroupBox.Location = new System.Drawing.Point(90, 198);
             this.inglesGroupBox.Name = "inglesGroupBox";
             this.inglesGroupBox.Size = new System.Drawing.Size(570, 498);
@@ -101,6 +102,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(742, 770);
             this.Controls.Add(this.ordenarClassBut);
             this.Controls.Add(this.ordenarApebut);
@@ -108,8 +110,10 @@
             this.Controls.Add(this.inglesGroupBox);
             this.Controls.Add(this.subtituloLabel);
             this.Controls.Add(this.tituloLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
             this.Name = "InglesForm";
-            this.Text = "InglesForm";
+            this.Text = "Clase de Inglés";
             this.Load += new System.EventHandler(this.InglesForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

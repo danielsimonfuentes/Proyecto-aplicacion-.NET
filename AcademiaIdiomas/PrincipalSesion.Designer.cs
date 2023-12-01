@@ -47,7 +47,7 @@
             this.cerrarSesiónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(598, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,7 +93,7 @@
             // miPerfilToolStripMenuItem
             // 
             this.miPerfilToolStripMenuItem.Name = "miPerfilToolStripMenuItem";
-            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.miPerfilToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.miPerfilToolStripMenuItem.Text = "Mi perfil";
             this.miPerfilToolStripMenuItem.Click += new System.EventHandler(this.miPerfilToolStripMenuItem_Click);
             // 
@@ -110,11 +110,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.BlanchedAlmond;
+            this.ClientSize = new System.Drawing.Size(598, 450);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "PrincipalSesion";
-            this.Text = "PrincipalSesion";
+            this.Text = "Academia de Idiomas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PrincipalSesion_FormClosing);
             this.Load += new System.EventHandler(this.PrincipalSesion_Load);
             this.menuStrip1.ResumeLayout(false);

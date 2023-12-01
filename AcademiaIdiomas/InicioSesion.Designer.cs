@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
             this.acceptBut = new System.Windows.Forms.Button();
             this.usuarioBox = new System.Windows.Forms.TextBox();
             this.usuarioLabel = new System.Windows.Forms.Label();
@@ -141,7 +142,7 @@
             this.AcceptButton = this.acceptBut;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.CancelButton = this.cancelBut;
             this.ClientSize = new System.Drawing.Size(425, 416);
             this.Controls.Add(this.accederBut);
@@ -155,9 +156,10 @@
             this.Controls.Add(this.usuarioBox);
             this.Controls.Add(this.acceptBut);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "InicioSesion";
-            this.Text = "InicioSesion";
+            this.Text = "Inicio de sesión";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.InicioSesion_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InicioSesion_FormClosed);
             this.Load += new System.EventHandler(this.InicioSesion_Load);
