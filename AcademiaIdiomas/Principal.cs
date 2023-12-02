@@ -82,5 +82,11 @@ namespace AcademiaIdiomas
             AlemanForm Form = new AlemanForm();
             Form.Show();
         }
+
+        private void opinionBut_Click(object sender, EventArgs e)
+        {
+            Opinion Form = new Opinion();
+            Form.Show();
+        }
     }
 }

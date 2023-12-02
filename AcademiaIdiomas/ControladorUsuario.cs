@@ -50,14 +50,11 @@ namespace AcademiaIdiomas
         {
             try
             {
-                //Pass the filepath and filename to the StreamWriter Constructor
                 StreamWriter sw = new StreamWriter("usuarios.txt");
-                //Write a line of text
                 foreach (var item in Usuario.listaUsuarios)
                 {
                     sw.WriteLine(item.toString2());
                 }
-                //Close the file
                 sw.Close();
             }
             catch (Exception e)

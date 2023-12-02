@@ -79,17 +79,44 @@ namespace AcademiaIdiomas
             this.Hide();
             this.Dispose();
         }
-
+        //para controlar cuantas veces se ha cargado el formulario y cargar así solo una vez los estudiantes, usuarios y opiniones
+        private static int vecesCargado = 0;
         private void InicioSesion_Load(object sender, EventArgs e)
         {
             usuarioBox.Focus();
-            //cargarUsuarios();
-            //cargarEstudiantes();
-            //ControladorUsuario.escribirUsuarioTXT();
-            ControladorUsuario.leerUsuarioTXT();
-            ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
-            ControladorEstudiante.leerEstudiantesJSON("franceses.json");
-            ControladorEstudiante.leerEstudiantesBin("alemanes.bin");
+            if(vecesCargado == 0)
+            {
+                cargarOpiniones();
+                //cargarUsuarios();
+                //cargarEstudiantes();
+                //ControladorUsuario.escribirUsuarioTXT();
+                ControladorUsuario.leerUsuarioTXT();
+                ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
+                ControladorEstudiante.leerEstudiantesJSON("franceses.json");
+                ControladorEstudiante.leerEstudiantesBin("alemanes.bin");
+                vecesCargado++;
+            }
+            
+        }
+        public static List<String> opiniones = new List<String>();
+
+        public static List<String> getOpiniones()
+        {
+            return opiniones;
+        }
+        public static void setOpiniones(List<String> lista)
+        {
+            opiniones = lista;
+        }
+
+        private void cargarOpiniones()
+        {
+            opiniones.Clear();
+            opiniones.Add("Me encanta la profesionalidad de esta página web");
+            opiniones.Add("Estuve estudiando hace tiempo y me dieron un trato excelente");
+            opiniones.Add("Ofrecen clases ajustadas a tu nivel, muy recomendado");
+            opiniones.Add("Los profesores son muy buenos, adaptan sus clases a tus cocimientos");
+            opiniones.Add("Tienen una página web muy atrayente seguro que los profesores de interfaces estarían orgullosos");
         }
 
         public void cargarUsuarios()
@@ -102,7 +129,7 @@ namespace AcademiaIdiomas
             Usuario.listaUsuarios.Add(new Usuario("Daniel", "Simón", "Fuentes", "12348765F", "Calle Cualquiera 6", DateTime.Parse("9/3/2004 12:00:00 AM"), "daniel", "daniel", true));
         }
 
-        public static void cargarEstudiantes()
+        public void cargarEstudiantes()
         {
             Estudiante.listaEstudiantes.Add(new Estudiante("87654321D", "María", "López", "González", 22, "francés", "B1"));
             Estudiante.listaEstudiantes.Add(new Estudiante("11112222R", "Pedro", "Martínez", "Fernández", 21, "alemán", "C1"));

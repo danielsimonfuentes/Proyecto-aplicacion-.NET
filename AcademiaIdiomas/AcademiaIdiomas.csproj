@@ -131,6 +131,12 @@
     <Compile Include="MiPerfil.Designer.cs">
       <DependentUpon>MiPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Opinion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Opinion.Designer.cs">
+      <DependentUpon>Opinion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MiPerfil.resx">
       <DependentUpon>MiPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Opinion.resx">
+      <DependentUpon>Opinion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>

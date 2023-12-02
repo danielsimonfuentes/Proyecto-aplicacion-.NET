@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
             this.registroLabel = new System.Windows.Forms.Label();
             this.apellido1Label = new System.Windows.Forms.Label();
             this.apellido1Box = new System.Windows.Forms.TextBox();
@@ -268,6 +269,7 @@
             this.Controls.Add(this.nombreBox);
             this.Controls.Add(this.registroLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Registro";
             this.Text = "Registro";

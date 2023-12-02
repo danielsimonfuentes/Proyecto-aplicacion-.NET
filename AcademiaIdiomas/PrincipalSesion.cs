@@ -74,5 +74,11 @@ namespace AcademiaIdiomas
             this.Hide();
             this.Dispose();
         }
+
+        private void opinionBut_Click(object sender, EventArgs e)
+        {
+            Opinion Form = new Opinion();
+            Form.Show();
+        }
     }
 }

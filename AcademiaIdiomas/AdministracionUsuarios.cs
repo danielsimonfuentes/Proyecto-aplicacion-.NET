@@ -54,13 +54,20 @@ namespace AcademiaIdiomas
                     Usuario user = Usuario.listaUsuarios.Find(p => p.ToString() == checkBox.Text);
                     if (checkBox.Checked)
                     {
-                        if (user.Admin)
+                        if (user.Equals(Usuario.usuarioActual[0]))
                         {
-                            MessageBox.Show("No puedes eliminar administradores, prueba quitando el privilegio de administrador al usuario", "Eliminar un administrador", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("No puedes hacer esta acción con tu usuario actual", "El usuario seleccionado es tu usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         else
                         {
-                            Usuario.listaUsuarios.Remove(user);
+                            if (user.Admin)
+                            {
+                                MessageBox.Show("No puedes eliminar administradores, prueba quitando el privilegio de administrador al usuario", "Eliminar un administrador", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
+                            else
+                            {
+                                Usuario.listaUsuarios.Remove(user);
+                            }
                         }
                     }
                 }
@@ -111,7 +118,14 @@ namespace AcademiaIdiomas
                         {
                             if (item.Equals(user))
                             {
-                                item.Admin = false;
+                                if (item.Equals(Usuario.usuarioActual[0]))
+                                {
+                                    MessageBox.Show("No puedes hacer esta acción con tu usuario actual", "El usuario seleccionado es tu usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                else
+                                {
+                                    item.Admin = false;
+                                }
                             }
                         }
                     }

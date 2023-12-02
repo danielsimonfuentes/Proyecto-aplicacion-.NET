@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlemanForm));
             this.alemanGroupBox = new System.Windows.Forms.GroupBox();
             this.subtituloLabel = new System.Windows.Forms.Label();
             this.tituloLabel = new System.Windows.Forms.Label();
             this.ImprimirBut = new System.Windows.Forms.Button();
             this.ordenarApebut = new System.Windows.Forms.Button();
             this.ordenarClassBut = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // alemanGroupBox
@@ -98,12 +101,26 @@
             this.ordenarClassBut.UseVisualStyleBackColor = true;
             this.ordenarClassBut.Click += new System.EventHandler(this.ordenarClassBut_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(129, 118);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // AlemanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;
             this.ClientSize = new System.Drawing.Size(746, 770);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ordenarClassBut);
             this.Controls.Add(this.ordenarApebut);
             this.Controls.Add(this.ImprimirBut);
@@ -111,10 +128,12 @@
             this.Controls.Add(this.subtituloLabel);
             this.Controls.Add(this.tituloLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AlemanForm";
             this.Text = "Clase de Alemán";
             this.Load += new System.EventHandler(this.AlemanForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,5 +147,6 @@
         private System.Windows.Forms.Button ImprimirBut;
         private System.Windows.Forms.Button ordenarApebut;
         private System.Windows.Forms.Button ordenarClassBut;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

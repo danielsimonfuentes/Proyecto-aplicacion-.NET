@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionUsuarios));
             this.usersGroupBox = new System.Windows.Forms.GroupBox();
             this.adminUsersLabel = new System.Windows.Forms.Label();
             this.eliminarBut = new System.Windows.Forms.Button();
@@ -100,6 +101,7 @@
             this.Controls.Add(this.adminUsersLabel);
             this.Controls.Add(this.usersGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AdministracionUsuarios";
             this.Text = "Administración de Usuarios";

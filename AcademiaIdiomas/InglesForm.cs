@@ -77,5 +77,10 @@ namespace AcademiaIdiomas
                 crearEtiqueta((Estudiante)ordenadosDesc[i], 80 + (i * 30), i);
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

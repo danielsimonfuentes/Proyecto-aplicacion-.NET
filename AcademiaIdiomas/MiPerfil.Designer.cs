@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiPerfil));
             this.datosGroupBox = new System.Windows.Forms.GroupBox();
             this.perfilGroupBox = new System.Windows.Forms.GroupBox();
             this.perfilPictureBox = new System.Windows.Forms.PictureBox();
@@ -84,6 +85,7 @@
             this.Controls.Add(this.datosGroupBox);
             this.Controls.Add(this.perfilPictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MiPerfil";
             this.Text = "Mi Perfil";
