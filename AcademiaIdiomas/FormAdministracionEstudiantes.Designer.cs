@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class AdministracionEstudiantes
+    partial class FormAdministracionEstudiantes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionEstudiantes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministracionEstudiantes));
             this.eliminarBut = new System.Windows.Forms.Button();
             this.adminEstudiantesLabel = new System.Windows.Forms.Label();
             this.idiomaComboBox = new System.Windows.Forms.ComboBox();

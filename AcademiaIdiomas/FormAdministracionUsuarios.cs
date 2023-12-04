@@ -12,9 +12,9 @@ using CheckBox = System.Windows.Forms.CheckBox;
 
 namespace AcademiaIdiomas
 {
-    public partial class AdministracionUsuarios : Form
+    public partial class FormAdministracionUsuarios : Form
     {
-        public AdministracionUsuarios()
+        public FormAdministracionUsuarios()
         {
             InitializeComponent();
         }
@@ -51,9 +51,11 @@ namespace AcademiaIdiomas
             {
                 if (control is CheckBox checkBox)
                 {
+                    //La variable user corresponderá al checkbox que contiene un usuario que se esté leyendo
                     Usuario user = Usuario.listaUsuarios.Find(p => p.ToString() == checkBox.Text);
                     if (checkBox.Checked)
                     {
+                        //para que no puedas eliminarte a ti mismo
                         if (user.Equals(Usuario.usuarioActual[0]))
                         {
                             MessageBox.Show("No puedes hacer esta acción con tu usuario actual", "El usuario seleccionado es tu usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -85,6 +87,7 @@ namespace AcademiaIdiomas
             {
                 if (control is CheckBox checkBox)
                 {
+                    //La variable user corresponderá al checkbox que contiene un usuario que se esté leyendo
                     Usuario user = Usuario.listaUsuarios.Find(p => p.ToString() == checkBox.Text);
                     if (checkBox.Checked)
                     {
@@ -111,6 +114,7 @@ namespace AcademiaIdiomas
             {
                 if (control is CheckBox checkBox)
                 {
+                    //La variable user corresponderá al checkbox que contiene un usuario que se esté leyendo
                     Usuario user = Usuario.listaUsuarios.Find(p => p.ToString() == checkBox.Text);
                     if (checkBox.Checked)
                     {
@@ -118,6 +122,7 @@ namespace AcademiaIdiomas
                         {
                             if (item.Equals(user))
                             {
+                                //para que no puedas quitarte a ti mismo de administradores
                                 if (item.Equals(Usuario.usuarioActual[0]))
                                 {
                                     MessageBox.Show("No puedes hacer esta acción con tu usuario actual", "El usuario seleccionado es tu usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);

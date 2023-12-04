@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class Opinion
+    partial class FormOpinion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Opinion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOpinion));
             this.opinionesGroupBox = new System.Windows.Forms.GroupBox();
             this.tituloLabel = new System.Windows.Forms.Label();
             this.opinionTextBox = new System.Windows.Forms.TextBox();
@@ -63,7 +63,7 @@
             this.opinionTextBox.Location = new System.Drawing.Point(136, 558);
             this.opinionTextBox.Name = "opinionTextBox";
             this.opinionTextBox.Size = new System.Drawing.Size(486, 20);
-            this.opinionTextBox.TabIndex = 2;
+            this.opinionTextBox.TabIndex = 1;
             // 
             // publicarBut
             // 
@@ -71,7 +71,7 @@
             this.publicarBut.Location = new System.Drawing.Point(661, 546);
             this.publicarBut.Name = "publicarBut";
             this.publicarBut.Size = new System.Drawing.Size(108, 40);
-            this.publicarBut.TabIndex = 3;
+            this.publicarBut.TabIndex = 2;
             this.publicarBut.Text = "Publicar";
             this.publicarBut.UseVisualStyleBackColor = true;
             this.publicarBut.Click += new System.EventHandler(this.publicarBut_Click);
@@ -101,6 +101,7 @@
             // 
             // Opinion
             // 
+            this.AcceptButton = this.publicarBut;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BlanchedAlmond;

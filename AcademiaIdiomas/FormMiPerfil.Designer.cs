@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class MiPerfil
+    partial class FormMiPerfil
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiPerfil));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMiPerfil));
             this.datosGroupBox = new System.Windows.Forms.GroupBox();
             this.perfilGroupBox = new System.Windows.Forms.GroupBox();
             this.perfilPictureBox = new System.Windows.Forms.PictureBox();

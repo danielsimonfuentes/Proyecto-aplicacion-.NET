@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class MatriculacionEstudiante
+    partial class FormMatriculacionEstudiante
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MatriculacionEstudiante));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMatriculacionEstudiante));
             this.cancelBut = new System.Windows.Forms.Button();
             this.acceptBut = new System.Windows.Forms.Button();
             this.claseLabel = new System.Windows.Forms.Label();

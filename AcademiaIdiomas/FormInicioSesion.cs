@@ -15,16 +15,16 @@ using System.Xml.Serialization;
 namespace AcademiaIdiomas
 {
     
-    public partial class InicioSesion : Form
+    public partial class FormInicioSesion : Form
     {
-        public InicioSesion()
+        public FormInicioSesion()
         {
             InitializeComponent();
         }
 
         private void registrateLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Registro Form = new Registro();
+            FormRegistro Form = new FormRegistro();
             Form.Show();
             this.Hide();
             this.Dispose();
@@ -41,7 +41,7 @@ namespace AcademiaIdiomas
 
                 Usuario.usuarioActual.Add(Usuario.listaUsuarios[posicion]);
                    
-                PrincipalSesion Form = new PrincipalSesion();
+                FormPrincipalSesion Form = new FormPrincipalSesion();
                 Form.Show();
                 this.Hide();
                 this.Dispose();
@@ -63,7 +63,7 @@ namespace AcademiaIdiomas
 
         private void InicioSesion_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Principal Form = new Principal();
+            FormPrincipal Form = new FormPrincipal();
             Form.Show();
         }
 
@@ -74,7 +74,7 @@ namespace AcademiaIdiomas
 
         private void accederBut_Click(object sender, EventArgs e)
         {
-            Principal Form = new Principal();
+            FormPrincipal Form = new FormPrincipal();
             Form.Show();
             this.Hide();
             this.Dispose();
@@ -89,6 +89,7 @@ namespace AcademiaIdiomas
                 cargarOpiniones();
                 //cargarUsuarios();
                 //cargarEstudiantes();
+
                 //ControladorUsuario.escribirUsuarioTXT();
                 ControladorUsuario.leerUsuarioTXT();
                 ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
@@ -127,6 +128,12 @@ namespace AcademiaIdiomas
             Usuario.listaUsuarios.Add(new Usuario("Luis", "Lopez", "Martinez", "56781234D", "Calle Cualquiera 4", DateTime.Parse("11/7/1980 12:00:00 AM"), "luis", "luis", false));
             Usuario.listaUsuarios.Add(new Usuario("Fernando", "Marcos", "Martín", "87654321E", "Calle Cualquiera 5", DateTime.Parse("17/8/1986 12:00:00 AM"), "fernando", "fernando", true));
             Usuario.listaUsuarios.Add(new Usuario("Daniel", "Simón", "Fuentes", "12348765F", "Calle Cualquiera 6", DateTime.Parse("9/3/2004 12:00:00 AM"), "daniel", "daniel", true));
+            /*Antonio,Rodriguez,García,12345678A,Calle Cualquiera 1,6/2/1980 12:00:00 AM,antonio,antonio,false
+            Julio,Sanchez,Moreno,87651234B,Calle Cualquiera 2,29/9/1980 12:00:00 AM,julio,julio,false
+            José,González,Ruiz,43215678C,Calle Cualquiera 3,22/12/1980 12:00:00 AM,jose,jose,false
+            Luis,Lopez,Martinez,56781234D,Calle Cualquiera 4,11/7/1980 12:00:00 AM,luis,luis,false
+            Fernando,Marcos,Martín,87654321E,Calle Cualquiera 5,17/8/1986 12:00:00 AM,fernando,fernando,true
+            Daniel,Simón,Fuentes,12348765F,Calle Cualquiera 6,9/3/2004 12:00:00 AM,daniel,daniel,true*/
         }
 
         public void cargarEstudiantes()
@@ -166,12 +173,6 @@ namespace AcademiaIdiomas
             Estudiante.listaEstudiantes.Add(new Estudiante("98765439A", "Adriana", "García", "Rodríguez", 20, "francés", "B2"));
             Estudiante.listaEstudiantes.Add(new Estudiante("35791357R", "Roberto", "Sánchez", "Ortega", 23, "inglés", "C1"));
             Estudiante.listaEstudiantes.Add(new Estudiante("46812468E", "Laura", "Gómez", "Muñoz", 21, "inglés", "A2"));
-            /*Antonio,Rodriguez,García,12345678A,Calle Cualquiera 1,6/2/1980 12:00:00 AM,antonio,antonio,false
-            Julio,Sanchez,Moreno,87651234B,Calle Cualquiera 2,29/9/1980 12:00:00 AM,julio,julio,false
-            José,González,Ruiz,43215678C,Calle Cualquiera 3,22/12/1980 12:00:00 AM,jose,jose,false
-            Luis,Lopez,Martinez,56781234D,Calle Cualquiera 4,11/7/1980 12:00:00 AM,luis,luis,false
-            Fernando,Marcos,Martín,87654321E,Calle Cualquiera 5,17/8/1986 12:00:00 AM,fernando,fernando,true
-            Daniel,Simón,Fuentes,12348765F,Calle Cualquiera 6,9/3/2004 12:00:00 AM,daniel,daniel,true*/
         }
 
 

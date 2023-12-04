@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class Administracion : Form
+    public partial class FormAdministracion : Form
     {
-        public Administracion()
+        public FormAdministracion()
         {
             InitializeComponent();
         }
 
         private void usersBut_Click(object sender, EventArgs e)
         {
-            AdministracionUsuarios Form = new AdministracionUsuarios();
+            FormAdministracionUsuarios Form = new FormAdministracionUsuarios();
             Form.Show();
         }
 
@@ -30,7 +30,7 @@ namespace AcademiaIdiomas
 
         private void estudiantesBut_Click(object sender, EventArgs e)
         {
-            AdministracionEstudiantes Form = new AdministracionEstudiantes();
+            FormAdministracionEstudiantes Form = new FormAdministracionEstudiantes();
             Form.Show();
         }
     }

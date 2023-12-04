@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class Principal : Form
+    public partial class FormPrincipal : Form
     {
-        public Principal()
+        public FormPrincipal()
         {
             InitializeComponent();
 
@@ -20,7 +20,7 @@ namespace AcademiaIdiomas
 
         private void iniciarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InicioSesion Form = new InicioSesion();
+            FormInicioSesion Form = new FormInicioSesion();
             Form.Show();
             this.Hide();
             this.Dispose();
@@ -60,6 +60,7 @@ namespace AcademiaIdiomas
 
         }
 
+        //no se ha iniciado sesión
         private void cuentaToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             MessageBox.Show("¡Debes iniciar sesión antes!", "Inicio de sesión", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -67,25 +68,25 @@ namespace AcademiaIdiomas
 
         private void inglésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InglesForm Form = new InglesForm();
+            FormInglesForm Form = new FormInglesForm();
             Form.Show();
         }
 
         private void francésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrancesForm Form = new FrancesForm();
+            FormFrancesForm Form = new FormFrancesForm();
             Form.Show();
         }
 
         private void alemánToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AlemanForm Form = new AlemanForm();
+            FormAlemanForm Form = new FormAlemanForm();
             Form.Show();
         }
 
         private void opinionBut_Click(object sender, EventArgs e)
         {
-            Opinion Form = new Opinion();
+            FormOpinion Form = new FormOpinion();
             Form.Show();
         }
     }

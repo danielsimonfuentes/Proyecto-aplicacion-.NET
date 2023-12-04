@@ -11,9 +11,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace AcademiaIdiomas
 {
-    public partial class InglesForm : Form
+    public partial class FormInglesForm : Form
     {
-        public InglesForm()
+        public FormInglesForm()
         {
             InitializeComponent();
         }
@@ -23,6 +23,7 @@ namespace AcademiaIdiomas
             
             for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
             {
+                //forma una lista nueva eligiendo a los estudiantes que tengan como atributo de idioma "inglés"
                 if (Estudiante.listaEstudiantes[i].Idioma.Equals("inglés")) {
                     ingleses.Add(Estudiante.listaEstudiantes[i]);
                 }
@@ -58,6 +59,7 @@ namespace AcademiaIdiomas
             ControladorEstudiante.escribirEstudiantesBin(ingleses, "ingleses.bin");
         }
 
+        //ordenar por orden alfabético los apellidos
         private void button1_Click(object sender, EventArgs e)
         {
             this.inglesGroupBox.Controls.Clear();
@@ -68,6 +70,7 @@ namespace AcademiaIdiomas
             }
         }
 
+        //ordenar por orden alfabético las clases
         private void ordenarClassBut_Click(object sender, EventArgs e)
         {
             this.inglesGroupBox.Controls.Clear();

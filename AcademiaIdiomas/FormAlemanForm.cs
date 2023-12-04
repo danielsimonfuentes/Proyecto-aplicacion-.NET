@@ -10,25 +10,26 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class FrancesForm : Form
+    public partial class FormAlemanForm : Form
     {
-        public FrancesForm()
+        public FormAlemanForm()
         {
             InitializeComponent();
         }
-        List<Estudiante> franceses = new List<Estudiante>();
-        private void FrancesForm_Load(object sender, EventArgs e)
+        List<Estudiante> alemanes = new List<Estudiante>();
+        private void AlemanForm_Load(object sender, EventArgs e)
         {
             for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
             {
-                if (Estudiante.listaEstudiantes[i].Idioma.Equals("francés"))
+                //forma una lista nueva eligiendo a los estudiantes que tengan como atributo de idioma "alemán"
+                if (Estudiante.listaEstudiantes[i].Idioma.Equals("alemán"))
                 {
-                    franceses.Add(Estudiante.listaEstudiantes[i]);
+                    alemanes.Add(Estudiante.listaEstudiantes[i]);
                 }
             }
-            for (int i = 0; i < franceses.Count; i++)
+            for (int i = 0; i < alemanes.Count; i++)
             {
-                crearEtiqueta((Estudiante)franceses[i], 80 + (i * 30), i);
+                crearEtiqueta((Estudiante)alemanes[i], 80 + (i * 30), i);
             }
         }
 
@@ -45,32 +46,34 @@ namespace AcademiaIdiomas
             GrupoLbl.TabIndex = 1;
             GrupoLbl.Tag = estudiante;
             GrupoLbl.Text = estudiante.ToString();
-            francesGroupBox.Controls.Add(GrupoLbl);
+            alemanGroupBox.Controls.Add(GrupoLbl);
             posicion += 20;
             contadorNombre++;
         }
 
         private void ImprimirBut_Click(object sender, EventArgs e)
         {
-            ControladorEstudiante.escribirEstudiantesXML(franceses,"franceses.xml");
-            ControladorEstudiante.escribirEstudiantesJSON(franceses, "franceses.json");
-            ControladorEstudiante.escribirEstudiantesBin(franceses, "franceses.bin");
+            ControladorEstudiante.escribirEstudiantesXML(alemanes, "alemanes.xml");
+            ControladorEstudiante.escribirEstudiantesJSON(alemanes, "alemanes.json");
+            ControladorEstudiante.escribirEstudiantesBin(alemanes, "alemanes.bin");
         }
 
+        //ordenar por orden alfabético los apellidos
         private void ordenarApebut_Click(object sender, EventArgs e)
         {
-            this.francesGroupBox.Controls.Clear();
-            List<Estudiante> ordenadosDesc = franceses.OrderBy(x => x.Apellido1).ToList();
+            this.alemanGroupBox.Controls.Clear();
+            List<Estudiante> ordenadosDesc = alemanes.OrderBy(x => x.Apellido1).ToList();
             for (int i = 0; i < ordenadosDesc.Count; i++)
             {
                 crearEtiqueta((Estudiante)ordenadosDesc[i], 80 + (i * 30), i);
             }
         }
 
+        //ordenar por orden alfabético las clases
         private void ordenarClassBut_Click(object sender, EventArgs e)
         {
-            this.francesGroupBox.Controls.Clear();
-            List<Estudiante> ordenadosDesc = franceses.OrderBy(x => x.Clase).ToList();
+            this.alemanGroupBox.Controls.Clear();
+            List<Estudiante> ordenadosDesc = alemanes.OrderBy(x => x.Clase).ToList();
             for (int i = 0; i < ordenadosDesc.Count; i++)
             {
                 crearEtiqueta((Estudiante)ordenadosDesc[i], 80 + (i * 30), i);

@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class InicioSesion
+    partial class FormInicioSesion
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InicioSesion));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicioSesion));
             this.acceptBut = new System.Windows.Forms.Button();
             this.usuarioBox = new System.Windows.Forms.TextBox();
             this.usuarioLabel = new System.Windows.Forms.Label();
@@ -39,6 +39,7 @@
             this.registroLabel = new System.Windows.Forms.Label();
             this.registrateLink = new System.Windows.Forms.LinkLabel();
             this.accederBut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // acceptBut
@@ -140,6 +141,15 @@
             this.accederBut.UseVisualStyleBackColor = true;
             this.accederBut.Click += new System.EventHandler(this.accederBut_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(350, 378);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(77, 39);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Usuario admin:\r\nfernando\r\nfernando\r\n";
+            // 
             // InicioSesion
             // 
             this.AcceptButton = this.acceptBut;
@@ -148,6 +158,7 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.CancelButton = this.cancelBut;
             this.ClientSize = new System.Drawing.Size(425, 416);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.accederBut);
             this.Controls.Add(this.registrateLink);
             this.Controls.Add(this.registroLabel);
@@ -183,5 +194,6 @@
         private System.Windows.Forms.Label registroLabel;
         private System.Windows.Forms.LinkLabel registrateLink;
         private System.Windows.Forms.Button accederBut;
+        private System.Windows.Forms.Label label1;
     }
 }

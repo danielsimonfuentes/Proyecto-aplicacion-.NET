@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class AdministracionEstudiantes : Form
+    public partial class FormAdministracionEstudiantes : Form
     {
-        public AdministracionEstudiantes()
+        public FormAdministracionEstudiantes()
         {
             InitializeComponent();
         }
@@ -50,12 +50,13 @@ namespace AcademiaIdiomas
 
         private void matricularBut_Click(object sender, EventArgs e)
         {
-            MatriculacionEstudiante Form = new MatriculacionEstudiante();
+            FormMatriculacionEstudiante Form = new FormMatriculacionEstudiante();
             Form.Show();
             this.Hide();
             this.Dispose();
         }
 
+        //para filtrar por el idioma elegido en el comboBox
         private void filtrarBut_Click(object sender, EventArgs e)
         {
             List<Estudiante> estudiantes = new List<Estudiante>();
@@ -92,9 +93,7 @@ namespace AcademiaIdiomas
                     Estudiante est = Estudiante.listaEstudiantes.Find(p => p.ToString() == checkBox.Text);
                     if (checkBox.Checked)
                     {
-                        
                          Estudiante.listaEstudiantes.Remove(est);
-                        
                     }
                     else
                     {

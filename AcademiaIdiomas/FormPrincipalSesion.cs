@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class PrincipalSesion : Form
+    public partial class FormPrincipalSesion : Form
     {
-        public PrincipalSesion()
+        public FormPrincipalSesion()
         {
             InitializeComponent();
 
@@ -25,7 +25,7 @@ namespace AcademiaIdiomas
 
         private void miPerfilToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MiPerfil Form = new MiPerfil();
+            FormMiPerfil Form = new FormMiPerfil();
             Form.Show();
         }
         private bool confirma = false;
@@ -50,26 +50,26 @@ namespace AcademiaIdiomas
 
         private void inglésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InglesForm Form = new InglesForm();
+            FormInglesForm Form = new FormInglesForm();
             Form.Show();
         }
 
         private void francésToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrancesForm Form = new FrancesForm();
+            FormFrancesForm Form = new FormFrancesForm();
             Form.Show();
         }
 
         private void alemánToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AlemanForm Form = new AlemanForm();
+            FormAlemanForm Form = new FormAlemanForm();
             Form.Show();
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Usuario.usuarioActual.Clear();
-            Principal Form = new Principal();
+            FormPrincipal Form = new FormPrincipal();
             Form.Show();
             this.Hide();
             this.Dispose();
@@ -77,7 +77,7 @@ namespace AcademiaIdiomas
 
         private void opinionBut_Click(object sender, EventArgs e)
         {
-            Opinion Form = new Opinion();
+            FormOpinion Form = new FormOpinion();
             Form.Show();
         }
     }

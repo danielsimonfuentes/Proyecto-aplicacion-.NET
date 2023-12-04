@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class Opinion : Form
+    public partial class FormOpinion : Form
     {
-        public Opinion()
+        public FormOpinion()
         {
             InitializeComponent();
         }
         
         private void Opinion_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < InicioSesion.getOpiniones().Count; i++)
+            for (int i = 0; i < FormInicioSesion.getOpiniones().Count; i++)
             {
-                crearEtiqueta(InicioSesion.getOpiniones()[i], 50 + (i * 30), i);
+                crearEtiqueta(FormInicioSesion.getOpiniones()[i], 50 + (i * 30), i);
             }
         }
 
@@ -62,15 +62,16 @@ namespace AcademiaIdiomas
             }
         }
 
+        //recibe la opinión recién publicada y la pone la primera desplazando los demás elementos una posición
         private List<String> ponerPrimero(String op1)
         {
             List<String> list = new List<String>();
             list.Add(op1);
-            for (int i = 0; i < InicioSesion.getOpiniones().Count; i++)
+            for (int i = 0; i < FormInicioSesion.getOpiniones().Count; i++)
             {
-                list.Add(InicioSesion.getOpiniones()[i]);
+                list.Add(FormInicioSesion.getOpiniones()[i]);
             }
-            InicioSesion.setOpiniones(list);
+            FormInicioSesion.setOpiniones(list);
             return list;
         }
 

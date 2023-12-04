@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class MatriculacionEstudiante : Form
+    public partial class FormMatriculacionEstudiante : Form
     {
-        public MatriculacionEstudiante()
+        public FormMatriculacionEstudiante()
         {
             InitializeComponent();
         }
@@ -85,7 +85,7 @@ namespace AcademiaIdiomas
             {
                 claseComboBox.BackColor = Color.White;
             }
-
+            //cuando todos los campos se han rellenado correctamente
             if (validar)
             {
                 Estudiante.listaEstudiantes.Add(new Estudiante(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, (int)edadUpDown.Value, idiomaComboBox.Text, claseComboBox.Text));

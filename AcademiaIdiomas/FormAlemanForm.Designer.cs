@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class AlemanForm
+    partial class FormAlemanForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlemanForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlemanForm));
             this.alemanGroupBox = new System.Windows.Forms.GroupBox();
             this.subtituloLabel = new System.Windows.Forms.Label();
             this.tituloLabel = new System.Windows.Forms.Label();

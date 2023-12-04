@@ -74,125 +74,125 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Administracion.cs">
+    <Compile Include="FormAdministracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administracion.Designer.cs">
-      <DependentUpon>Administracion.cs</DependentUpon>
+    <Compile Include="FormAdministracion.Designer.cs">
+      <DependentUpon>FormAdministracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministracionEstudiantes.cs">
+    <Compile Include="FormAdministracionEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministracionEstudiantes.Designer.cs">
-      <DependentUpon>AdministracionEstudiantes.cs</DependentUpon>
+    <Compile Include="FormAdministracionEstudiantes.Designer.cs">
+      <DependentUpon>FormAdministracionEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdministracionUsuarios.cs">
+    <Compile Include="FormAdministracionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdministracionUsuarios.Designer.cs">
-      <DependentUpon>AdministracionUsuarios.cs</DependentUpon>
+    <Compile Include="FormAdministracionUsuarios.Designer.cs">
+      <DependentUpon>FormAdministracionUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="AlemanForm.cs">
+    <Compile Include="FormAlemanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlemanForm.Designer.cs">
-      <DependentUpon>AlemanForm.cs</DependentUpon>
+    <Compile Include="FormAlemanForm.Designer.cs">
+      <DependentUpon>FormAlemanForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ControladorEstudiante.cs" />
     <Compile Include="ControladorUsuario.cs" />
     <Compile Include="Estudiante.cs" />
-    <Compile Include="FrancesForm.cs">
+    <Compile Include="FormFrancesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrancesForm.Designer.cs">
-      <DependentUpon>FrancesForm.cs</DependentUpon>
+    <Compile Include="FormFrancesForm.Designer.cs">
+      <DependentUpon>FormFrancesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InglesForm.cs">
+    <Compile Include="FormInglesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InglesForm.Designer.cs">
-      <DependentUpon>InglesForm.cs</DependentUpon>
+    <Compile Include="FormInglesForm.Designer.cs">
+      <DependentUpon>FormInglesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InicioSesion.cs">
+    <Compile Include="FormInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InicioSesion.Designer.cs">
-      <DependentUpon>InicioSesion.cs</DependentUpon>
+    <Compile Include="FormInicioSesion.Designer.cs">
+      <DependentUpon>FormInicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="MatriculacionEstudiante.cs">
+    <Compile Include="FormMatriculacionEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MatriculacionEstudiante.Designer.cs">
-      <DependentUpon>MatriculacionEstudiante.cs</DependentUpon>
+    <Compile Include="FormMatriculacionEstudiante.Designer.cs">
+      <DependentUpon>FormMatriculacionEstudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="MiPerfil.cs">
+    <Compile Include="FormMiPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MiPerfil.Designer.cs">
-      <DependentUpon>MiPerfil.cs</DependentUpon>
+    <Compile Include="FormMiPerfil.Designer.cs">
+      <DependentUpon>FormMiPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Opinion.cs">
+    <Compile Include="FormOpinion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Opinion.Designer.cs">
-      <DependentUpon>Opinion.cs</DependentUpon>
+    <Compile Include="FormOpinion.Designer.cs">
+      <DependentUpon>FormOpinion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal.cs">
+    <Compile Include="FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal.Designer.cs">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <Compile Include="FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PrincipalSesion.cs">
+    <Compile Include="FormPrincipalSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PrincipalSesion.Designer.cs">
-      <DependentUpon>PrincipalSesion.cs</DependentUpon>
+    <Compile Include="FormPrincipalSesion.Designer.cs">
+      <DependentUpon>FormPrincipalSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registro.cs">
+    <Compile Include="FormRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="FormRegistro.Designer.cs">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="Administracion.resx">
-      <DependentUpon>Administracion.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdministracion.resx">
+      <DependentUpon>FormAdministracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdministracionEstudiantes.resx">
-      <DependentUpon>AdministracionEstudiantes.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdministracionEstudiantes.resx">
+      <DependentUpon>FormAdministracionEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdministracionUsuarios.resx">
-      <DependentUpon>AdministracionUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="FormAdministracionUsuarios.resx">
+      <DependentUpon>FormAdministracionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AlemanForm.resx">
-      <DependentUpon>AlemanForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormAlemanForm.resx">
+      <DependentUpon>FormAlemanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrancesForm.resx">
-      <DependentUpon>FrancesForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormFrancesForm.resx">
+      <DependentUpon>FormFrancesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InglesForm.resx">
-      <DependentUpon>InglesForm.cs</DependentUpon>
+    <EmbeddedResource Include="FormInglesForm.resx">
+      <DependentUpon>FormInglesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InicioSesion.resx">
-      <DependentUpon>InicioSesion.cs</DependentUpon>
+    <EmbeddedResource Include="FormInicioSesion.resx">
+      <DependentUpon>FormInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MatriculacionEstudiante.resx">
-      <DependentUpon>MatriculacionEstudiante.cs</DependentUpon>
+    <EmbeddedResource Include="FormMatriculacionEstudiante.resx">
+      <DependentUpon>FormMatriculacionEstudiante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MiPerfil.resx">
-      <DependentUpon>MiPerfil.cs</DependentUpon>
+    <EmbeddedResource Include="FormMiPerfil.resx">
+      <DependentUpon>FormMiPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Opinion.resx">
-      <DependentUpon>Opinion.cs</DependentUpon>
+    <EmbeddedResource Include="FormOpinion.resx">
+      <DependentUpon>FormOpinion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal.resx">
-      <DependentUpon>Principal.cs</DependentUpon>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PrincipalSesion.resx">
-      <DependentUpon>PrincipalSesion.cs</DependentUpon>
+    <EmbeddedResource Include="FormPrincipalSesion.resx">
+      <DependentUpon>FormPrincipalSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,8 +204,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Registro.resx">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegistro.resx">
+      <DependentUpon>FormRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

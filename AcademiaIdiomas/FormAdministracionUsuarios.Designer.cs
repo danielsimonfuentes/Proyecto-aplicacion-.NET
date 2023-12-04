@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class AdministracionUsuarios
+    partial class FormAdministracionUsuarios
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministracionUsuarios));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministracionUsuarios));
             this.usersGroupBox = new System.Windows.Forms.GroupBox();
             this.adminUsersLabel = new System.Windows.Forms.Label();
             this.eliminarBut = new System.Windows.Forms.Button();

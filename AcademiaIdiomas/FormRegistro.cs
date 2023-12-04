@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AcademiaIdiomas
 {
-    public partial class Registro : Form
+    public partial class FormRegistro : Form
     {
-        public Registro()
+        public FormRegistro()
         {
             InitializeComponent();
         }
@@ -111,7 +111,7 @@ namespace AcademiaIdiomas
                 contrasena2Box.Clear();
                 validar = false;
             }
-
+            //cuando todos los campos se han rellenado correctamente
             if (validar)
             {
                 Usuario.listaUsuarios.Add(new Usuario(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value,nombreUsuarioBox.Text,contrasena1Box.Text, false));
@@ -126,7 +126,7 @@ namespace AcademiaIdiomas
 
         private void Registro_FormClosing(object sender, FormClosingEventArgs e)
         {
-            InicioSesion Form = new InicioSesion();
+            FormInicioSesion Form = new FormInicioSesion();
             Form.Show();
         }
     }

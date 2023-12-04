@@ -1,6 +1,6 @@
 ﻿namespace AcademiaIdiomas
 {
-    partial class Registro
+    partial class FormRegistro
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistro));
             this.registroLabel = new System.Windows.Forms.Label();
             this.apellido1Label = new System.Windows.Forms.Label();
             this.apellido1Box = new System.Windows.Forms.TextBox();
