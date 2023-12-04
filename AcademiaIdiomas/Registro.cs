@@ -106,7 +106,7 @@ namespace AcademiaIdiomas
             }
             if(contrasena1Box.Text != contrasena2Box.Text)
             {
-                MessageBox.Show("Las contraseñas no coincidena");
+                MessageBox.Show("Las contraseñas no coinciden");
                 contrasena1Box.Clear();
                 contrasena2Box.Clear();
                 validar = false;
