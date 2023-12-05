@@ -74,124 +74,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAdministracion.cs">
+    <Compile Include="Vistas\FormAdministracion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdministracion.Designer.cs">
+    <Compile Include="Vistas\FormAdministracion.Designer.cs">
       <DependentUpon>FormAdministracion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAdministracionEstudiantes.cs">
+    <Compile Include="Vistas\FormAdministracionEstudiantes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdministracionEstudiantes.Designer.cs">
+    <Compile Include="Vistas\FormAdministracionEstudiantes.Designer.cs">
       <DependentUpon>FormAdministracionEstudiantes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAdministracionUsuarios.cs">
+    <Compile Include="Vistas\FormAdministracionUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdministracionUsuarios.Designer.cs">
+    <Compile Include="Vistas\FormAdministracionUsuarios.Designer.cs">
       <DependentUpon>FormAdministracionUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAlemanForm.cs">
+    <Compile Include="Vistas\FormAlemanForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAlemanForm.Designer.cs">
+    <Compile Include="Vistas\FormAlemanForm.Designer.cs">
       <DependentUpon>FormAlemanForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ControladorEstudiante.cs" />
-    <Compile Include="ControladorUsuario.cs" />
-    <Compile Include="Estudiante.cs" />
-    <Compile Include="FormFrancesForm.cs">
+    <Compile Include="Controladores\ControladorEstudiante.cs" />
+    <Compile Include="Controladores\ControladorUsuario.cs" />
+    <Compile Include="Modelos\Estudiante.cs" />
+    <Compile Include="Vistas\FormFrancesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFrancesForm.Designer.cs">
+    <Compile Include="Vistas\FormFrancesForm.Designer.cs">
       <DependentUpon>FormFrancesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInglesForm.cs">
+    <Compile Include="Vistas\FormInglesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInglesForm.Designer.cs">
+    <Compile Include="Vistas\FormInglesForm.Designer.cs">
       <DependentUpon>FormInglesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormInicioSesion.cs">
+    <Compile Include="Vistas\FormInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInicioSesion.Designer.cs">
+    <Compile Include="Vistas\FormInicioSesion.Designer.cs">
       <DependentUpon>FormInicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMatriculacionEstudiante.cs">
+    <Compile Include="Vistas\FormMatriculacionEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMatriculacionEstudiante.Designer.cs">
+    <Compile Include="Vistas\FormMatriculacionEstudiante.Designer.cs">
       <DependentUpon>FormMatriculacionEstudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMiPerfil.cs">
+    <Compile Include="Vistas\FormMiPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMiPerfil.Designer.cs">
+    <Compile Include="Vistas\FormMiPerfil.Designer.cs">
       <DependentUpon>FormMiPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOpinion.cs">
+    <Compile Include="Vistas\FormOpinion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOpinion.Designer.cs">
+    <Compile Include="Vistas\FormOpinion.Designer.cs">
       <DependentUpon>FormOpinion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipal.cs">
+    <Compile Include="Vistas\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipal.Designer.cs">
+    <Compile Include="Vistas\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPrincipalSesion.cs">
+    <Compile Include="Vistas\FormPrincipalSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPrincipalSesion.Designer.cs">
+    <Compile Include="Vistas\FormPrincipalSesion.Designer.cs">
       <DependentUpon>FormPrincipalSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FormRegistro.cs">
+    <Compile Include="Vistas\FormRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegistro.Designer.cs">
+    <Compile Include="Vistas\FormRegistro.Designer.cs">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuario.cs" />
-    <EmbeddedResource Include="FormAdministracion.resx">
+    <Compile Include="Modelos\Usuario.cs" />
+    <EmbeddedResource Include="Vistas\FormAdministracion.resx">
       <DependentUpon>FormAdministracion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdministracionEstudiantes.resx">
+    <EmbeddedResource Include="Vistas\FormAdministracionEstudiantes.resx">
       <DependentUpon>FormAdministracionEstudiantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAdministracionUsuarios.resx">
+    <EmbeddedResource Include="Vistas\FormAdministracionUsuarios.resx">
       <DependentUpon>FormAdministracionUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAlemanForm.resx">
+    <EmbeddedResource Include="Vistas\FormAlemanForm.resx">
       <DependentUpon>FormAlemanForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFrancesForm.resx">
+    <EmbeddedResource Include="Vistas\FormFrancesForm.resx">
       <DependentUpon>FormFrancesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInglesForm.resx">
+    <EmbeddedResource Include="Vistas\FormInglesForm.resx">
       <DependentUpon>FormInglesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormInicioSesion.resx">
+    <EmbeddedResource Include="Vistas\FormInicioSesion.resx">
       <DependentUpon>FormInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMatriculacionEstudiante.resx">
+    <EmbeddedResource Include="Vistas\FormMatriculacionEstudiante.resx">
       <DependentUpon>FormMatriculacionEstudiante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMiPerfil.resx">
+    <EmbeddedResource Include="Vistas\FormMiPerfil.resx">
       <DependentUpon>FormMiPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormOpinion.resx">
+    <EmbeddedResource Include="Vistas\FormOpinion.resx">
       <DependentUpon>FormOpinion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipal.resx">
+    <EmbeddedResource Include="Vistas\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPrincipalSesion.resx">
+    <EmbeddedResource Include="Vistas\FormPrincipalSesion.resx">
       <DependentUpon>FormPrincipalSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -204,7 +204,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="FormRegistro.resx">
+    <EmbeddedResource Include="Vistas\FormRegistro.resx">
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
