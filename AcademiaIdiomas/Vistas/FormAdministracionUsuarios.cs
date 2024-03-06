@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,125 +22,160 @@ namespace AcademiaIdiomas
 
         private void AdministracionUsuarios_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < Usuario.listaUsuarios.Count; i++)
-            {
-                crearEtiqueta((Usuario)Usuario.listaUsuarios[i], 50 + (i * 30), i);
-            }
+            CargarDatosEnDataGridView();
         }
 
-        void crearEtiqueta(Usuario user, int posicion, int contadorNombre)
+        private void CargarDatosEnDataGridView()
         {
-            CheckBox checkBox = new CheckBox();
-            checkBox.AutoSize = true;
-            checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F,
-           System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)
-           (0)));
-            checkBox.Location = new System.Drawing.Point(50, posicion);
-            checkBox.Name = "Usuario" + contadorNombre;
-            checkBox.Size = new System.Drawing.Size(291, 20);
-            checkBox.TabIndex = 1;
-            checkBox.Tag = user;
-            checkBox.Text = user.ToString();
-            usersGroupBox.Controls.Add(checkBox);
-            posicion += 20;
-            contadorNombre++;
-        }
-
-        private void eliminarBut_Click(object sender, EventArgs e)
-        {
-            foreach (Control control in usersGroupBox.Controls)
+            string connectionString = ControladorUsuario.construirCadenaConexión(); // Reemplaza con tu cadena de conexión
+            // En este caso, solo realiza un select del campo CódigoProyecto y nombreProyecto
+            // Sería necesario adaptarlo si queremos todos los campos de un proyecto.
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("Usuario", "Usuario");
+            dataGridView1.Columns.Add("Nombre", "Nombre");
+            dataGridView1.Columns.Add("Apellido1", "Apellido1");
+            dataGridView1.Columns.Add("Apellido2", "Apellido2");
+            dataGridView1.Columns.Add("DNI", "DNI");
+            dataGridView1.Columns.Add("Domicilio", "Domicilio");
+            dataGridView1.Columns.Add("Fecha Nacimiento", "Fecha Nacimiento");
+            dataGridView1.Columns.Add("Admin", "Admin");
+            string query = "SELECT * FROM Usuarios";
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                if (control is CheckBox checkBox)
+                try
                 {
-                    //La variable user corresponderá al checkbox que contiene un usuario que se esté leyendo
-                    Usuario user = Usuario.listaUsuarios.Find(p => p.ToString() == checkBox.Text);
-                    if (checkBox.Checked)
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        //para que no puedas eliminarte a ti mismo
-                        if (user.Equals(Usuario.usuarioActual[0]))
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            MessageBox.Show("No puedes hacer esta acción con tu usuario actual", "El usuario seleccionado es tu usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            if (user.Admin)
+                            while (reader.Read())
                             {
-                                MessageBox.Show("No puedes eliminar administradores, prueba quitando el privilegio de administrador al usuario", "Eliminar un administrador", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            }
-                            else
-                            {
-                                Usuario.listaUsuarios.Remove(user);
+                                // Agregar una nueva fila al DataGridView con el código y el nombre del proyecto
+                                dataGridView1.Rows.Add(reader["Usuario"].ToString(), reader["Nombre"].ToString(), reader["Apellido1"].ToString(), reader["Apellido2"].ToString(), reader["Dni"].ToString(), reader["Domicilio"].ToString(), reader["FechaNac"].ToString(), reader["Admin"]);
                             }
                         }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar datos: {ex.Message}\n{ex.StackTrace}");
+                }
             }
-            usersGroupBox.Controls.Clear();
-            for (int i = 0; i < Usuario.listaUsuarios.Count; i++)
+        }
+
+        private void eliminarBut_Click(object sender, EventArgs e)
+        {
+            int registrosAfectados;
+            try
             {
-                crearEtiqueta(Usuario.listaUsuarios[i], 50 + (i * 30), i);
+                using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
+                {
+                    cnn.Open();
+                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                    {
+                        SqlCommand comando = cnn.CreateCommand();
+                        comando.CommandType = CommandType.Text;
+                        comando.CommandText = "DELETE FROM Usuarios WHERE Usuario='" + row.Cells["Usuario"].Value.ToString() + "'";
+                        SqlDataAdapter adaptador = new SqlDataAdapter();
+                        adaptador.DeleteCommand = comando;
+                        if ((registrosAfectados=adaptador.DeleteCommand.ExecuteNonQuery()) == 0)
+                        {
+                            MessageBox.Show($"No se pudo eliminar. Registros afectados: {registrosAfectados}");
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Se eliminó correctamente el registro. Registros afectados: {registrosAfectados}");
+                        }
+                        
+                        adaptador.Dispose();
+                        comando.Dispose();
+                        dataGridView1.Controls.Clear();
+                        CargarDatosEnDataGridView();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al eliminar " + ex.Message);
             }
         }
 
         private void adminBut_Click(object sender, EventArgs e)
         {
-            foreach (Control control in usersGroupBox.Controls)
+            if(dataGridView1.SelectedRows.Count == 1)
             {
-                if (control is CheckBox checkBox)
+                bool resultado = true;
+                try
                 {
-                    //La variable user corresponderá al checkbox que contiene un usuario que se esté leyendo
-                    Usuario user = Usuario.listaUsuarios.Find(p => p.ToString() == checkBox.Text);
-                    if (checkBox.Checked)
+                    
+                    using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
                     {
-                        foreach (var item in Usuario.listaUsuarios)
+                        cnn.Open();
+                        SqlCommand comando = cnn.CreateCommand();
+                        comando.CommandType = CommandType.Text;
+                        comando.CommandText = "UPDATE Usuarios SET Admin='True' WHERE Usuario ='" + dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString() + "'";
+                        SqlDataAdapter adaptador = new SqlDataAdapter();
+                        adaptador.UpdateCommand = comando;
+                        if (adaptador.UpdateCommand.ExecuteNonQuery() == 0)
                         {
-                            if (item.Equals(user))
-                            {
-                                item.Admin = true;
-                            }
+                            resultado = false;
                         }
+                        adaptador.Dispose();
+                        comando.Dispose();
+                        dataGridView1.Controls.Clear();
+                        CargarDatosEnDataGridView();
                     }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al actualizar " + ex.Message);
+                    resultado = false;
+                }
+                MessageBox.Show(resultado.ToString());
             }
-            usersGroupBox.Controls.Clear();
-            for (int i = 0; i < Usuario.listaUsuarios.Count; i++)
+            else
             {
-                crearEtiqueta(Usuario.listaUsuarios[i], 50 + (i * 30), i);
+                MessageBox.Show("Solo puedes seleccionar un usuario", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void noadminBut_Click(object sender, EventArgs e)
         {
-            foreach (Control control in usersGroupBox.Controls)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
-                if (control is CheckBox checkBox)
+                bool resultado = true;
+                try
                 {
-                    //La variable user corresponderá al checkbox que contiene un usuario que se esté leyendo
-                    Usuario user = Usuario.listaUsuarios.Find(p => p.ToString() == checkBox.Text);
-                    if (checkBox.Checked)
+
+                    using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
                     {
-                        foreach (var item in Usuario.listaUsuarios)
+                        cnn.Open();
+                        SqlCommand comando = cnn.CreateCommand();
+                        comando.CommandType = CommandType.Text;
+                        comando.CommandText = "UPDATE Usuarios SET Admin='False' WHERE Usuario ='" + dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString() + "'";
+                        SqlDataAdapter adaptador = new SqlDataAdapter();
+                        adaptador.UpdateCommand = comando;
+                        if (adaptador.UpdateCommand.ExecuteNonQuery() == 0)
                         {
-                            if (item.Equals(user))
-                            {
-                                //para que no puedas quitarte a ti mismo de administradores
-                                if (item.Equals(Usuario.usuarioActual[0]))
-                                {
-                                    MessageBox.Show("No puedes hacer esta acción con tu usuario actual", "El usuario seleccionado es tu usuario", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                }
-                                else
-                                {
-                                    item.Admin = false;
-                                }
-                            }
+                            resultado = false;
                         }
+                        adaptador.Dispose();
+                        comando.Dispose();
+                        dataGridView1.Controls.Clear();
+                        CargarDatosEnDataGridView();
                     }
                 }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al actualizar " + ex.Message);
+                    resultado = false;
+                }
+                MessageBox.Show(resultado.ToString());
             }
-            usersGroupBox.Controls.Clear();
-            for (int i = 0; i < Usuario.listaUsuarios.Count; i++)
+            else
             {
-                crearEtiqueta(Usuario.listaUsuarios[i], 50 + (i * 30), i);
+                MessageBox.Show("Solo puedes seleccionar un usuario", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

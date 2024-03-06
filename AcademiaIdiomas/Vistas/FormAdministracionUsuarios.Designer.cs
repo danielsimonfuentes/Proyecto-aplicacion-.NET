@@ -29,22 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministracionUsuarios));
-            this.usersGroupBox = new System.Windows.Forms.GroupBox();
             this.adminUsersLabel = new System.Windows.Forms.Label();
             this.eliminarBut = new System.Windows.Forms.Button();
             this.adminBut = new System.Windows.Forms.Button();
             this.noadminBut = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // usersGroupBox
-            // 
-            this.usersGroupBox.AutoSize = true;
-            this.usersGroupBox.BackColor = System.Drawing.Color.GhostWhite;
-            this.usersGroupBox.Location = new System.Drawing.Point(44, 90);
-            this.usersGroupBox.Name = "usersGroupBox";
-            this.usersGroupBox.Size = new System.Drawing.Size(577, 413);
-            this.usersGroupBox.TabIndex = 0;
-            this.usersGroupBox.TabStop = false;
             // 
             // adminUsersLabel
             // 
@@ -89,34 +80,42 @@
             this.noadminBut.UseVisualStyleBackColor = true;
             this.noadminBut.Click += new System.EventHandler(this.noadminBut_Click);
             // 
-            // AdministracionUsuarios
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(31, 90);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(606, 408);
+            this.dataGridView1.TabIndex = 5;
+            // 
+            // FormAdministracionUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(668, 623);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.noadminBut);
             this.Controls.Add(this.adminBut);
             this.Controls.Add(this.eliminarBut);
             this.Controls.Add(this.adminUsersLabel);
-            this.Controls.Add(this.usersGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "AdministracionUsuarios";
+            this.Name = "FormAdministracionUsuarios";
             this.Text = "Administración de Usuarios";
             this.Load += new System.EventHandler(this.AdministracionUsuarios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox usersGroupBox;
         private System.Windows.Forms.Label adminUsersLabel;
         private System.Windows.Forms.Button eliminarBut;
         private System.Windows.Forms.Button adminBut;
         private System.Windows.Forms.Button noadminBut;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

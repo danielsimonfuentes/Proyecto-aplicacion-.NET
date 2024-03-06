@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -64,26 +66,14 @@ namespace AcademiaIdiomas
             }
         }
 
-        public static void insertarUsuarioBBDD()
+        public static void insertarUsuarioBBDD(String Usuario, String Nombre, String Apellido1, String Apellido2, String Dni, String Domicilio, DateTime FechaNac, String Contrasena, bool Admin)
         {
             // Cadena de conexión a la base de datos
             // Ver método construirCadenaConexión más arriba
-            string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\daniel\\Source\\Repos\\ProyectoInterfaces\\AcademiaIdiomas\\Academia.mdf;Integrated Security=True";
+            string connectionString = construirCadenaConexión();
             // Query de inserción
             string query = "INSERT INTO Usuarios (Usuario, Nombre, Apellido1, Apellido2, Dni, Domicilio, FechaNac, Contrasena, Admin) VALUES(@Usuario, @Nombre, @Apellido1, @Apellido2, @Dni, @Domicilio, @FechaNac, @Contrasena, @Admin)";
-            // Valores para los parámetros
-            string descripcion = descripBox.Text;
-            DateTime fechaInicio = fecIniDateTimePicker.Value;
-            DateTime fechaFin = fecFinDateTimePicker.Value;
-            string estado = "false";
-            if (estadoCheckBox.Checked)
-            {
-                estado = "true";
-            }
-            double presupuestoInicial = Convert.ToDouble(preIniNumericUpDown.Text);
-            double presupuestoFinal = Convert.ToDouble(preFinNumericUpDown.Text);
-            string cambios = Convert.ToString(cambiosTextBox.Text);
-            string codigoCliente = codCliNumericUpDown.Text;
+            
             // Crear la conexión
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -95,16 +85,15 @@ namespace AcademiaIdiomas
                     // Agregar parámetros y sus valores
                     // No se añade a la inserción el campo código proyecto porque es autonumérico, aunque se puede configurar para poder
                     // insertarlo a la fuerza.
-                    command.Parameters.AddWithValue("@Descripcion", descripcion);
-                    command.Parameters.AddWithValue("@FechaInicio", fechaInicio);
-                    command.Parameters.AddWithValue("@FechaFin", fechaFin);
-                    command.Parameters.AddWithValue("@Estado", estado);
-                    command.Parameters.AddWithValue("@PresupuestoInicial",
-                    presupuestoInicial);
-                    command.Parameters.AddWithValue("@PresupuestoFinal",
-                    presupuestoFinal);
-                    command.Parameters.AddWithValue("@Cambios", cambios);
-                    command.Parameters.AddWithValue("@CodigoCliente", codigoCliente);
+                    command.Parameters.AddWithValue("@Usuario", Usuario);
+                    command.Parameters.AddWithValue("@Nombre", Nombre);
+                    command.Parameters.AddWithValue("@Apellido1", Apellido1);
+                    command.Parameters.AddWithValue("@Apellido2", Apellido2);
+                    command.Parameters.AddWithValue("@Dni", Dni);
+                    command.Parameters.AddWithValue("@Domicilio", Domicilio);
+                    command.Parameters.AddWithValue("@FechaNac", FechaNac);
+                    command.Parameters.AddWithValue("@Contrasena", Contrasena);
+                    command.Parameters.AddWithValue("@Admin", Admin);
                     try
                     {
                         // Ejecutar la consulta de inserción
@@ -117,6 +106,20 @@ namespace AcademiaIdiomas
                     }
                 }
             }
+        }
+
+        public static string construirCadenaConexión()
+        {
+            // Directorio del archivo de base de datos relativo al directorio de ejecución
+            // A diferencia de la anterior version, forzamos a que coja la ruta relativa con el
+            // Path.GetFullPath
+            string databaseFileName =
+            Path.GetFullPath(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, @"..\..\Academia.mdf"));
+            // Cadena de conexión
+            string connectionString = $"Data Source=(LocalDB)\\MSSQLLocalDB; AttachDbFilename ={databaseFileName}; Integrated Security = True";
+            // Usar la cadena de conexión
+            MessageBox.Show("Cadena de conexión: " + connectionString);
+            return connectionString;
         }
     }
 }
