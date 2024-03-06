@@ -21,7 +21,7 @@ namespace AcademiaIdiomas
         }
 
         private void AdministracionUsuarios_Load(object sender, EventArgs e)
-        {
+        { 
             CargarDatosEnDataGridView();
         }
 
