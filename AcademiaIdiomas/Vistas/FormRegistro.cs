@@ -115,6 +115,7 @@ namespace AcademiaIdiomas
             if (validar)
             {
                 Usuario.listaUsuarios.Add(new Usuario(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value,nombreUsuarioBox.Text,contrasena1Box.Text, false));
+                ControladorUsuario.insertarUsuarioBBDD(nombreUsuarioBox.Text, nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value, contrasena1Box.Text, false);
                 this.Close();
             }
         }

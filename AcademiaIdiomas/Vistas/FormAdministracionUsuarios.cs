@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,45 @@ namespace AcademiaIdiomas
             for (int i = 0; i < Usuario.listaUsuarios.Count; i++)
             {
                 crearEtiqueta((Usuario)Usuario.listaUsuarios[i], 50 + (i * 30), i);
+            }
+            CargarDatosEnDataGridView();
+        }
+
+        private void CargarDatosEnDataGridView()
+        {
+            string connectionString = ControladorUsuario.construirCadenaConexión(); // Reemplaza con tu cadena de conexión
+            // En este caso, solo realiza un select del campo CódigoProyecto y nombreProyecto
+            // Sería necesario adaptarlo si queremos todos los campos de un proyecto.
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("Usuario", "Usuario");
+            dataGridView1.Columns.Add("Nombre", "Nombre");
+            dataGridView1.Columns.Add("Apellido1", "Apellido1");
+            dataGridView1.Columns.Add("Apellido2", "Apellido2");
+            dataGridView1.Columns.Add("DNI", "DNI");
+            dataGridView1.Columns.Add("Domicilio", "Domicilio");
+            dataGridView1.Columns.Add("Fecha Nacimiento", "Fecha Nacimiento");
+            string query = "SELECT * FROM Usuarios";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Agregar una nueva fila al DataGridView con el código y el nombre del proyecto
+                                dataGridView1.Rows.Add(reader["Usuario"].ToString(), reader["Nombre"].ToString(), reader["Apellido1"].ToString(), reader["Apellido2"].ToString(), reader["Dni"].ToString(), reader["Domicilio"].ToString(), reader["FechaNac"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar datos: {ex.Message}\n{ex.StackTrace}");
+                }
             }
         }
 

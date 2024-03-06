@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -33,31 +34,53 @@ namespace AcademiaIdiomas
         
         private void acceptBut_Click(object sender, EventArgs e)
         {
-            int posicion = Usuario.listaUsuarios.FindIndex(x => x.NombreUsuario == usuarioBox.Text.ToLower());
-            if (posicion != -1 && (Usuario.listaUsuarios[posicion].Contrasena == contrasenaBox.Text))
+            int posicion;
+            string connectionString = ControladorUsuario.construirCadenaConexión(); // Reemplaza con tu cadena de conexión
+            // En este caso, solo realiza un select del campo CódigoProyecto y nombreProyecto
+            // Sería necesario adaptarlo si queremos todos los campos de un proyecto.
+            string query = "SELECT * FROM Usuarios WHERE Usuario='" + usuarioBox.Text + "' and Contrasena='" + contrasenaBox.Text + "'";
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                usuarioBox.Clear();
-                contrasenaBox.Clear();
-
-                Usuario.usuarioActual.Add(Usuario.listaUsuarios[posicion]);
-                   
-                FormPrincipalSesion Form = new FormPrincipalSesion();
-                Form.Show();
-                this.Hide();
-                this.Dispose();
-            }
-            else
-            {
-                intentos++;
-                MessageBox.Show("Usuario o contraseña incorrecta", "Revisa el suario o contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                usuarioBox.Clear();
-                contrasenaBox.Clear();
-                if (intentos >= 3)
+                try
                 {
-                    MessageBox.Show("Ya has agotado los tres intentos", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    this.Close();
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while(reader.Read())
+                            {
+                                if (reader["Usuario"] != null)
+                                {
+                                    posicion = Usuario.listaUsuarios.FindIndex(x => x.NombreUsuario == usuarioBox.Text.ToLower());
+                                    Usuario.usuarioActual.Add(Usuario.listaUsuarios[posicion]);
+
+                                    FormPrincipalSesion Form = new FormPrincipalSesion();
+                                    Form.Show();
+                                    this.Hide();
+                                    this.Dispose();
+                                }
+                                else
+                                {
+                                    intentos++;
+                                    MessageBox.Show("Usuario o contraseña incorrecta", "Revisa el suario o contraseña", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    usuarioBox.Clear();
+                                    contrasenaBox.Clear();
+                                    if (intentos >= 3)
+                                    {
+                                        MessageBox.Show("Ya has agotado los tres intentos", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        this.Close();
+                                    }
+                                    usuarioBox.Focus();
+                                }
+                            }
+                        }
+                    }
                 }
-                usuarioBox.Focus();
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar datos: {ex.Message}\n{ex.StackTrace}");
+                }
             }
         }
 
@@ -87,14 +110,15 @@ namespace AcademiaIdiomas
             if(vecesCargado == 0)
             {
                 cargarOpiniones();
-                //cargarUsuarios();
+                cargarUsuarios();
+                MessageBox.Show(Usuario.listaUsuarios.Count.ToString());
                 //cargarEstudiantes();
 
                 //ControladorUsuario.escribirUsuarioTXT();
-                ControladorUsuario.leerUsuarioTXT();
+                /*ControladorUsuario.leerUsuarioTXT();
                 ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
                 ControladorEstudiante.leerEstudiantesJSON("franceses.json");
-                ControladorEstudiante.leerEstudiantesBin("alemanes.bin");
+                ControladorEstudiante.leerEstudiantesBin("alemanes.bin");*/
                 vecesCargado++;
             }
             
@@ -134,6 +158,10 @@ namespace AcademiaIdiomas
             Luis,Lopez,Martinez,56781234D,Calle Cualquiera 4,11/7/1980 12:00:00 AM,luis,luis,false
             Fernando,Marcos,Martín,87654321E,Calle Cualquiera 5,17/8/1986 12:00:00 AM,fernando,fernando,true
             Daniel,Simón,Fuentes,12348765F,Calle Cualquiera 6,9/3/2004 12:00:00 AM,daniel,daniel,true*/
+            /*foreach (var item in Usuario.listaUsuarios)
+            {
+                ControladorUsuario.insertarUsuarioBBDD(item.NombreUsuario, item.Nombre, item.Apellido1, item.Apellido2, item.Dni, item.Domicilio, item.FechaNac, item.Contrasena, item.Admin);
+            }*/
         }
 
         public void cargarEstudiantes()
