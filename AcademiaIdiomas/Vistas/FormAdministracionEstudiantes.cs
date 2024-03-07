@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,28 +21,45 @@ namespace AcademiaIdiomas
 
         private void AdministracionEstudiantes_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
-            {
-                crearEtiqueta((Estudiante)Estudiante.listaEstudiantes[i], 50 + (i * 30), i);
-            }
+            CargarDatosEnDataGridView("SELECT * FROM Estudiantes");
         }
 
-        void crearEtiqueta(Estudiante estudiante, int posicion, int contadorNombre)
+        private void CargarDatosEnDataGridView(String q)
         {
-            CheckBox checkBox = new CheckBox();
-            checkBox.AutoSize = true;
-            checkBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F,
-           System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)
-           (0)));
-            checkBox.Location = new System.Drawing.Point(50, posicion);
-            checkBox.Name = "lblCurso" + contadorNombre;
-            checkBox.Size = new System.Drawing.Size(291, 20);
-            checkBox.TabIndex = 1;
-            checkBox.Tag = estudiante;
-            checkBox.Text = estudiante.ToString();
-            estudiantesPanel.Controls.Add(checkBox);
-            posicion += 20;
-            contadorNombre++;
+            string connectionString = ControladorUsuario.construirCadenaConexión(); // Reemplaza con tu cadena de conexión
+            // En este caso, solo realiza un select del campo CódigoProyecto y nombreProyecto
+            // Sería necesario adaptarlo si queremos todos los campos de un proyecto.
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("DNI", "DNI");
+            dataGridView1.Columns.Add("Nombre", "Nombre");
+            dataGridView1.Columns.Add("Apellido1", "Apellido1");
+            dataGridView1.Columns.Add("Apellido2", "Apellido2");
+            dataGridView1.Columns.Add("Edad", "Edad");
+            dataGridView1.Columns.Add("Idioma", "Idioma");
+            dataGridView1.Columns.Add("Clase", "Clase");
+            string query = q;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                // Agregar una nueva fila al DataGridView con el código y el nombre del proyecto
+                                dataGridView1.Rows.Add(reader["DNI"].ToString(), reader["Nombre"].ToString(), reader["Apellido1"].ToString(), reader["Apellido2"].ToString(), reader["Edad"].ToString(), reader["Idioma"].ToString(), reader["Clase"].ToString());
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar datos: {ex.Message}\n{ex.StackTrace}");
+                }
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,7 +78,6 @@ namespace AcademiaIdiomas
         //para filtrar por el idioma elegido en el comboBox
         private void filtrarBut_Click(object sender, EventArgs e)
         {
-            List<Estudiante> estudiantes = new List<Estudiante>();
             String eleccion = idiomaComboBox.Text;
             if (eleccion != "inglés" && eleccion != "francés" && eleccion != "alemán")
             {
@@ -67,45 +85,63 @@ namespace AcademiaIdiomas
             }
             else
             {
-                for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
-                {
-                    if (Estudiante.listaEstudiantes[i].Idioma.Equals(eleccion))
-                    {
-                        estudiantes.Add(Estudiante.listaEstudiantes[i]);
-                    }
-                }
-
-                estudiantesPanel.Controls.Clear();
-                for (int i = 0; i < estudiantes.Count; i++)
-                {
-                    crearEtiqueta(estudiantes[i], 50 + (i * 30), i);
-                }
+                CargarDatosEnDataGridView("SELECT * FROM Estudiantes where Idioma='" + eleccion + "'");
             }
         }
 
         private void eliminarBut_Click(object sender, EventArgs e)
         {
-            List<Estudiante> listaActual = new List<Estudiante>();
-            foreach (Control control in estudiantesPanel.Controls)
+            if (dataGridView1.SelectedRows.Count == 1)
             {
-                if (control is CheckBox checkBox)
+                int registrosAfectados;
+                try
                 {
-                    Estudiante est = Estudiante.listaEstudiantes.Find(p => p.ToString() == checkBox.Text);
-                    if (checkBox.Checked)
+                    using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
                     {
-                         Estudiante.listaEstudiantes.Remove(est);
-                    }
-                    else
-                    {
-                        listaActual.Add(est);
+                        cnn.Open();
+
+                        SqlCommand comando = cnn.CreateCommand();
+                        comando.CommandType = CommandType.Text;
+                        comando.CommandText = "DELETE FROM Estudiantes WHERE DNI='" + dataGridView1.SelectedRows[0].Cells["DNI"].Value.ToString() + "'";
+                        SqlDataAdapter adaptador = new SqlDataAdapter();
+                        adaptador.DeleteCommand = comando;
+                        if ((registrosAfectados = adaptador.DeleteCommand.ExecuteNonQuery()) == 0)
+                        {
+                            MessageBox.Show($"No se pudo eliminar. Registros afectados: {registrosAfectados}");
+                        }
+                        else
+                        {
+                            MessageBox.Show($"Se eliminó correctamente el registro. Registros afectados: {registrosAfectados}");
+                        }
+
+                        adaptador.Dispose();
+                        comando.Dispose();
+                        dataGridView1.Controls.Clear();
+                        CargarDatosEnDataGridView("SELECT * FROM Estudiantes");
                     }
                 }
-                
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error al eliminar " + ex.Message);
+                }
             }
-            estudiantesPanel.Controls.Clear();
-            for (int i = 0; i < listaActual.Count; i++)
+            else
             {
-                crearEtiqueta(listaActual[i], 50 + (i * 30), i);
+                MessageBox.Show("Solo puedes seleccionar un estudiante", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void modificarButton_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 1)
+            {
+                Form form = new FormModificarEstudiante(dataGridView1.SelectedRows[0].Cells["DNI"].Value.ToString());
+                form.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Solo puedes seleccionar un estudiante", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

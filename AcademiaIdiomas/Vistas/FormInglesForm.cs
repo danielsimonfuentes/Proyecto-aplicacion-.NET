@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,21 +21,39 @@ namespace AcademiaIdiomas
         List<Estudiante> ingleses = new List<Estudiante>();
         private void InglesForm_Load(object sender, EventArgs e)
         {
-            
-            for (int i = 0; i < Estudiante.listaEstudiantes.Count; i++)
+            CargarDatosEnGroupBox("SELECT * FROM Estudiantes where Idioma = 'Inglés'");
+        }
+        private void CargarDatosEnGroupBox(String q)
+        {
+            inglesGroupBox.Controls.Clear();
+            string connectionString = ControladorEstudiante.construirCadenaConexión(); // Reemplaza con tu cadena de conexión
+            string query = q;
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                //forma una lista nueva eligiendo a los estudiantes que tengan como atributo de idioma "inglés"
-                if (Estudiante.listaEstudiantes[i].Idioma.Equals("inglés")) {
-                    ingleses.Add(Estudiante.listaEstudiantes[i]);
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            int i = 0;
+                            while (reader.Read())
+                            {
+                                crearEtiqueta("DNI: " + reader["DNI"] + ". " + reader["Nombre"] + " " + reader["Apellido1"] + " " + reader["Apellido2"] + " -> " + reader["Idioma"] + ", " + reader["Clase"], 80 + (i * 30), i);
+                                i++;
+                            }
+                        }
+                    }
                 }
-            }
-            for (int i = 0; i < ingleses.Count; i++)
-            {
-                crearEtiqueta((Estudiante)ingleses[i], 80 + (i * 30), i);
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar datos: {ex.Message}\n{ex.StackTrace}");
+                }
             }
         }
 
-        void crearEtiqueta(Estudiante estudiante, int posicion, int contadorNombre)
+        void crearEtiqueta(String texto, int posicion, int contadorNombre)
         {
             Label GrupoLbl = new System.Windows.Forms.Label();
             GrupoLbl.AutoSize = true;
@@ -45,8 +64,8 @@ namespace AcademiaIdiomas
             GrupoLbl.Name = "lblCurso" + contadorNombre;
             GrupoLbl.Size = new System.Drawing.Size(291, 20);
             GrupoLbl.TabIndex = 1;
-            GrupoLbl.Tag = estudiante;
-            GrupoLbl.Text = estudiante.ToString();
+            GrupoLbl.Tag = texto;
+            GrupoLbl.Text = texto;
             inglesGroupBox.Controls.Add(GrupoLbl);
             posicion += 20;
             contadorNombre++;
@@ -62,23 +81,13 @@ namespace AcademiaIdiomas
         //ordenar por orden alfabético los apellidos
         private void button1_Click(object sender, EventArgs e)
         {
-            this.inglesGroupBox.Controls.Clear();
-            List<Estudiante> ordenadosDesc = ingleses.OrderBy(x => x.Apellido1).ToList();
-            for (int i = 0; i < ordenadosDesc.Count; i++)
-            {
-                crearEtiqueta((Estudiante)ordenadosDesc[i], 80 + (i * 30), i);
-            }
+            CargarDatosEnGroupBox("SELECT * FROM Estudiantes where Idioma = 'Inglés' order by Apellido1");
         }
 
         //ordenar por orden alfabético las clases
         private void ordenarClassBut_Click(object sender, EventArgs e)
         {
-            this.inglesGroupBox.Controls.Clear();
-            List<Estudiante> ordenadosDesc = ingleses.OrderBy(x => x.Clase).ToList();
-            for (int i = 0; i < ordenadosDesc.Count; i++)
-            {
-                crearEtiqueta((Estudiante)ordenadosDesc[i], 80 + (i * 30), i);
-            }
+            CargarDatosEnGroupBox("SELECT * FROM Estudiantes where Idioma = 'Inglés' order by Clase");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

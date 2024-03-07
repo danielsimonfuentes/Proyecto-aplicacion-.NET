@@ -66,38 +66,50 @@ namespace AcademiaIdiomas
 
         private void eliminarBut_Click(object sender, EventArgs e)
         {
-            int registrosAfectados;
-            try
+            if (dataGridView1.SelectedRows.Count == 1)
             {
-                using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
+                if (!dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString().Equals(Usuario.usuarioActual[0].NombreUsuario))
                 {
-                    cnn.Open();
-                    foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+                    int registrosAfectados;
+                    try
                     {
-                        SqlCommand comando = cnn.CreateCommand();
-                        comando.CommandType = CommandType.Text;
-                        comando.CommandText = "DELETE FROM Usuarios WHERE Usuario='" + row.Cells["Usuario"].Value.ToString() + "'";
-                        SqlDataAdapter adaptador = new SqlDataAdapter();
-                        adaptador.DeleteCommand = comando;
-                        if ((registrosAfectados=adaptador.DeleteCommand.ExecuteNonQuery()) == 0)
+                        using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
                         {
-                            MessageBox.Show($"No se pudo eliminar. Registros afectados: {registrosAfectados}");
+                            cnn.Open();
+
+                            SqlCommand comando = cnn.CreateCommand();
+                            comando.CommandType = CommandType.Text;
+                            comando.CommandText = "DELETE FROM Usuarios WHERE Usuario='" + dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString() + "'";
+                            SqlDataAdapter adaptador = new SqlDataAdapter();
+                            adaptador.DeleteCommand = comando;
+                            if ((registrosAfectados = adaptador.DeleteCommand.ExecuteNonQuery()) == 0)
+                            {
+                                MessageBox.Show($"No se pudo eliminar. Registros afectados: {registrosAfectados}");
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Se eliminó correctamente el registro. Registros afectados: {registrosAfectados}");
+                            }
+
+                            adaptador.Dispose();
+                            comando.Dispose();
+                            dataGridView1.Controls.Clear();
+                            CargarDatosEnDataGridView();
                         }
-                        else
-                        {
-                            MessageBox.Show($"Se eliminó correctamente el registro. Registros afectados: {registrosAfectados}");
-                        }
-                        
-                        adaptador.Dispose();
-                        comando.Dispose();
-                        dataGridView1.Controls.Clear();
-                        CargarDatosEnDataGridView();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error al eliminar " + ex.Message);
                     }
                 }
+                else
+                {
+                    MessageBox.Show("No puedes hacer esta acción con tu propio usuario", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Console.WriteLine("Error al eliminar " + ex.Message);
+                MessageBox.Show("Solo puedes seleccionar un usuario", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -108,7 +120,6 @@ namespace AcademiaIdiomas
                 bool resultado = true;
                 try
                 {
-                    
                     using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
                     {
                         cnn.Open();
@@ -144,34 +155,41 @@ namespace AcademiaIdiomas
         {
             if (dataGridView1.SelectedRows.Count == 1)
             {
-                bool resultado = true;
-                try
+                if (!dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString().Equals(Usuario.usuarioActual[0].NombreUsuario))
                 {
-
-                    using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
+                    bool resultado = true;
+                    try
                     {
-                        cnn.Open();
-                        SqlCommand comando = cnn.CreateCommand();
-                        comando.CommandType = CommandType.Text;
-                        comando.CommandText = "UPDATE Usuarios SET Admin='False' WHERE Usuario ='" + dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString() + "'";
-                        SqlDataAdapter adaptador = new SqlDataAdapter();
-                        adaptador.UpdateCommand = comando;
-                        if (adaptador.UpdateCommand.ExecuteNonQuery() == 0)
+
+                        using (SqlConnection cnn = new SqlConnection(ControladorUsuario.construirCadenaConexión()))
                         {
-                            resultado = false;
+                            cnn.Open();
+                            SqlCommand comando = cnn.CreateCommand();
+                            comando.CommandType = CommandType.Text;
+                            comando.CommandText = "UPDATE Usuarios SET Admin='False' WHERE Usuario ='" + dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString() + "'";
+                            SqlDataAdapter adaptador = new SqlDataAdapter();
+                            adaptador.UpdateCommand = comando;
+                            if (adaptador.UpdateCommand.ExecuteNonQuery() == 0)
+                            {
+                                resultado = false;
+                            }
+                            adaptador.Dispose();
+                            comando.Dispose();
+                            dataGridView1.Controls.Clear();
+                            CargarDatosEnDataGridView();
                         }
-                        adaptador.Dispose();
-                        comando.Dispose();
-                        dataGridView1.Controls.Clear();
-                        CargarDatosEnDataGridView();
                     }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error al actualizar " + ex.Message);
+                        resultado = false;
+                    }
+                    MessageBox.Show(resultado.ToString());
                 }
-                catch (Exception ex)
+                else
                 {
-                    Console.WriteLine("Error al actualizar " + ex.Message);
-                    resultado = false;
+                    MessageBox.Show("No puedes hacer esta acción con tu propio usuario", "¡Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                MessageBox.Show(resultado.ToString());
             }
             else
             {

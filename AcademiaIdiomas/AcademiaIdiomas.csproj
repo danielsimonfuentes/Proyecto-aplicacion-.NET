@@ -89,6 +89,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModificarEstudiante.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificarEstudiante.Designer.cs">
+      <DependentUpon>FormModificarEstudiante.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\FormAdministracion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
+    <EmbeddedResource Include="FormModificarEstudiante.resx">
+      <DependentUpon>FormModificarEstudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormAdministracion.resx">
       <DependentUpon>FormAdministracion.cs</DependentUpon>
     </EmbeddedResource>

@@ -89,6 +89,7 @@ namespace AcademiaIdiomas
             if (validar)
             {
                 Estudiante.listaEstudiantes.Add(new Estudiante(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, (int)edadUpDown.Value, idiomaComboBox.Text, claseComboBox.Text));
+                ControladorEstudiante.insertarEstudianteBBDD(dniBox.Text, nombreBox.Text, apellido1Box.Text, apellido2Box.Text, (int)edadUpDown.Value, idiomaComboBox.Text, claseComboBox.Text);
                 this.Close();
             }
         }

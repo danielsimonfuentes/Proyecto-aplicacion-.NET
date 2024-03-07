@@ -33,15 +33,17 @@
             this.adminEstudiantesLabel = new System.Windows.Forms.Label();
             this.idiomaComboBox = new System.Windows.Forms.ComboBox();
             this.filtrarIdioma = new System.Windows.Forms.Label();
-            this.estudiantesPanel = new System.Windows.Forms.Panel();
             this.filtrarBut = new System.Windows.Forms.Button();
             this.matricularBut = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.modificarButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // eliminarBut
             // 
             this.eliminarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarBut.Location = new System.Drawing.Point(510, 615);
+            this.eliminarBut.Location = new System.Drawing.Point(636, 615);
             this.eliminarBut.Name = "eliminarBut";
             this.eliminarBut.Size = new System.Drawing.Size(115, 48);
             this.eliminarBut.TabIndex = 7;
@@ -82,15 +84,6 @@
             this.filtrarIdioma.TabIndex = 11;
             this.filtrarIdioma.Text = "Filtrar por:";
             // 
-            // estudiantesPanel
-            // 
-            this.estudiantesPanel.AutoScroll = true;
-            this.estudiantesPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.estudiantesPanel.Location = new System.Drawing.Point(44, 103);
-            this.estudiantesPanel.Name = "estudiantesPanel";
-            this.estudiantesPanel.Size = new System.Drawing.Size(568, 477);
-            this.estudiantesPanel.TabIndex = 12;
-            // 
             // filtrarBut
             // 
             this.filtrarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -113,15 +106,35 @@
             this.matricularBut.UseVisualStyleBackColor = true;
             this.matricularBut.Click += new System.EventHandler(this.matricularBut_Click);
             // 
-            // AdministracionEstudiantes
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(44, 105);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(707, 471);
+            this.dataGridView1.TabIndex = 15;
+            // 
+            // modificarButton
+            // 
+            this.modificarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificarButton.Location = new System.Drawing.Point(504, 615);
+            this.modificarButton.Name = "modificarButton";
+            this.modificarButton.Size = new System.Drawing.Size(115, 48);
+            this.modificarButton.TabIndex = 16;
+            this.modificarButton.Text = "Cambiar datos";
+            this.modificarButton.UseVisualStyleBackColor = true;
+            this.modificarButton.Click += new System.EventHandler(this.modificarButton_Click);
+            // 
+            // FormAdministracionEstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(661, 702);
+            this.ClientSize = new System.Drawing.Size(795, 702);
+            this.Controls.Add(this.modificarButton);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.matricularBut);
             this.Controls.Add(this.filtrarBut);
-            this.Controls.Add(this.estudiantesPanel);
             this.Controls.Add(this.filtrarIdioma);
             this.Controls.Add(this.idiomaComboBox);
             this.Controls.Add(this.eliminarBut);
@@ -129,9 +142,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "AdministracionEstudiantes";
+            this.Name = "FormAdministracionEstudiantes";
             this.Text = "Administración de Estudiantes";
             this.Load += new System.EventHandler(this.AdministracionEstudiantes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,8 +156,9 @@
         private System.Windows.Forms.Label adminEstudiantesLabel;
         private System.Windows.Forms.ComboBox idiomaComboBox;
         private System.Windows.Forms.Label filtrarIdioma;
-        private System.Windows.Forms.Panel estudiantesPanel;
         private System.Windows.Forms.Button filtrarBut;
         private System.Windows.Forms.Button matricularBut;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button modificarButton;
     }
 }

@@ -110,12 +110,11 @@ namespace AcademiaIdiomas
             if(vecesCargado == 0)
             {
                 cargarOpiniones();
-                cargarUsuarios();
-                MessageBox.Show(Usuario.listaUsuarios.Count.ToString());
-                cargarEstudiantes();
+                //cargarUsuarios();
+                //cargarEstudiantes();
 
                 //ControladorUsuario.escribirUsuarioTXT();
-                //ControladorUsuario.leerUsuarioTXT();
+                ControladorUsuario.leerUsuarioTXT();
                 ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
                 ControladorEstudiante.leerEstudiantesJSON("franceses.json");
                 ControladorEstudiante.leerEstudiantesBin("alemanes.bin");
@@ -201,6 +200,10 @@ namespace AcademiaIdiomas
             Estudiante.listaEstudiantes.Add(new Estudiante("98765439A", "Adriana", "García", "Rodríguez", 20, "francés", "B2"));
             Estudiante.listaEstudiantes.Add(new Estudiante("35791357R", "Roberto", "Sánchez", "Ortega", 23, "inglés", "C1"));
             Estudiante.listaEstudiantes.Add(new Estudiante("46812468E", "Laura", "Gómez", "Muñoz", 21, "inglés", "A2"));
+            /*foreach (var item in Estudiante.listaEstudiantes)
+            {
+                ControladorEstudiante.insertarEstudianteBBDD(item.Dni, item.Nombre, item.Apellido1, item.Apellido2, item.Edad, item.Idioma, item.Clase);
+            }*/
         }
 
 

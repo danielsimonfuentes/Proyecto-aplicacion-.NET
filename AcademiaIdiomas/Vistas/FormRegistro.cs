@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -93,16 +94,13 @@ namespace AcademiaIdiomas
                 contrasena2Box.BackColor = Color.White;
             }
 
-            for(int i = 0; i < Usuario.listaUsuarios.Count; i++)
+            if (nombreUsuarioBox.Text == "" || compruebaNombreUsuario(nombreUsuarioBox.Text))
             {
-                if (nombreUsuarioBox.Text.Equals(Usuario.listaUsuarios[i].NombreUsuario))
-                {
-                    MessageBox.Show("El usuario ya está en uso, prueba a cambiarlo");
-                    nombreUsuarioBox.Clear();
-                    contrasena1Box.Clear();
-                    contrasena2Box.Clear();
-                    validar = false;
-                }
+                MessageBox.Show("Introduce un nombre de usuario válido");
+                nombreUsuarioBox.Clear();
+                contrasena1Box.Clear();
+                contrasena2Box.Clear();
+                validar = false;
             }
             if(contrasena1Box.Text != contrasena2Box.Text)
             {
@@ -117,6 +115,35 @@ namespace AcademiaIdiomas
                 Usuario.listaUsuarios.Add(new Usuario(nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value,nombreUsuarioBox.Text,contrasena1Box.Text, false));
                 ControladorUsuario.insertarUsuarioBBDD(nombreUsuarioBox.Text, nombreBox.Text, apellido1Box.Text, apellido2Box.Text, dniBox.Text, domicilioBox.Text, fechaNacDateTimePicker.Value, contrasena1Box.Text, false);
                 this.Close();
+            }
+        }
+
+        private bool compruebaNombreUsuario(String user)
+        {
+            bool ok = false;
+            string connectionString = ControladorUsuario.construirCadenaConexión(); // Reemplaza con tu cadena de conexión
+            string query = "SELECT * FROM Usuarios where Usuario='" + user + "'";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                ok = true;
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar datos: {ex.Message}\n{ex.StackTrace}");
+                }
+                return ok;
             }
         }
 
