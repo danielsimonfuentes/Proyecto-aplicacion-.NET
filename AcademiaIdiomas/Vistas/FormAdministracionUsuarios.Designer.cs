@@ -50,7 +50,7 @@
             // eliminarBut
             // 
             this.eliminarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarBut.Location = new System.Drawing.Point(427, 540);
+            this.eliminarBut.Location = new System.Drawing.Point(606, 538);
             this.eliminarBut.Name = "eliminarBut";
             this.eliminarBut.Size = new System.Drawing.Size(115, 48);
             this.eliminarBut.TabIndex = 2;
@@ -61,7 +61,7 @@
             // adminBut
             // 
             this.adminBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminBut.Location = new System.Drawing.Point(113, 541);
+            this.adminBut.Location = new System.Drawing.Point(198, 539);
             this.adminBut.Name = "adminBut";
             this.adminBut.Size = new System.Drawing.Size(115, 48);
             this.adminBut.TabIndex = 3;
@@ -72,7 +72,7 @@
             // noadminBut
             // 
             this.noadminBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noadminBut.Location = new System.Drawing.Point(272, 541);
+            this.noadminBut.Location = new System.Drawing.Point(404, 539);
             this.noadminBut.Name = "noadminBut";
             this.noadminBut.Size = new System.Drawing.Size(115, 48);
             this.noadminBut.TabIndex = 4;
@@ -85,7 +85,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(31, 90);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(606, 408);
+            this.dataGridView1.Size = new System.Drawing.Size(845, 408);
             this.dataGridView1.TabIndex = 5;
             // 
             // FormAdministracionUsuarios
@@ -93,7 +93,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(668, 623);
+            this.ClientSize = new System.Drawing.Size(920, 623);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.noadminBut);
             this.Controls.Add(this.adminBut);

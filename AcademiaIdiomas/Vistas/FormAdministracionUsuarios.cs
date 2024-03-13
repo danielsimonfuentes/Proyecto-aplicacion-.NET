@@ -66,7 +66,7 @@ namespace AcademiaIdiomas
 
         private void eliminarBut_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count == 1 && dataGridView1.SelectedRows[0].Index != dataGridView1.Rows.Count-1)
             {
                 if (!dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString().Equals(Usuario.usuarioActual[0].NombreUsuario))
                 {
@@ -115,7 +115,7 @@ namespace AcademiaIdiomas
 
         private void adminBut_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count == 1)
+            if(dataGridView1.SelectedRows.Count == 1 && dataGridView1.SelectedRows[0].Index != dataGridView1.Rows.Count - 1)
             {
                 bool resultado = true;
                 try
@@ -153,7 +153,7 @@ namespace AcademiaIdiomas
 
         private void noadminBut_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count == 1 && dataGridView1.SelectedRows[0].Index != dataGridView1.Rows.Count - 1)
             {
                 if (!dataGridView1.SelectedRows[0].Cells["Usuario"].Value.ToString().Equals(Usuario.usuarioActual[0].NombreUsuario))
                 {

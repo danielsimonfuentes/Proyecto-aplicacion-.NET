@@ -51,7 +51,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
@@ -89,10 +91,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormModificarEstudiante.cs">
+    <Compile Include="Vistas\FormModificarEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormModificarEstudiante.Designer.cs">
+    <Compile Include="Vistas\FormModificarEstudiante.Designer.cs">
       <DependentUpon>FormModificarEstudiante.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\FormAdministracion.cs">
@@ -179,7 +181,7 @@
       <DependentUpon>FormRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Usuario.cs" />
-    <EmbeddedResource Include="FormModificarEstudiante.resx">
+    <EmbeddedResource Include="Vistas\FormModificarEstudiante.resx">
       <DependentUpon>FormModificarEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormAdministracion.resx">

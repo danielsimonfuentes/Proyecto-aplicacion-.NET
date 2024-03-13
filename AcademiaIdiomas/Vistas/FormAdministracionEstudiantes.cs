@@ -91,7 +91,7 @@ namespace AcademiaIdiomas
 
         private void eliminarBut_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count == 1 && dataGridView1.SelectedRows[0].Index != dataGridView1.Rows.Count - 1)
             {
                 int registrosAfectados;
                 try
@@ -133,7 +133,7 @@ namespace AcademiaIdiomas
 
         private void modificarButton_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count == 1)
+            if (dataGridView1.SelectedRows.Count == 1 && dataGridView1.SelectedRows[0].Index != dataGridView1.Rows.Count - 1)
             {
                 Form form = new FormModificarEstudiante(dataGridView1.SelectedRows[0].Cells["DNI"].Value.ToString());
                 form.Show();

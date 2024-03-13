@@ -43,7 +43,7 @@
             // eliminarBut
             // 
             this.eliminarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eliminarBut.Location = new System.Drawing.Point(636, 615);
+            this.eliminarBut.Location = new System.Drawing.Point(665, 611);
             this.eliminarBut.Name = "eliminarBut";
             this.eliminarBut.Size = new System.Drawing.Size(115, 48);
             this.eliminarBut.TabIndex = 7;
@@ -68,7 +68,7 @@
             "inglés",
             "francés",
             "alemán"});
-            this.idiomaComboBox.Location = new System.Drawing.Point(119, 627);
+            this.idiomaComboBox.Location = new System.Drawing.Point(148, 623);
             this.idiomaComboBox.Name = "idiomaComboBox";
             this.idiomaComboBox.Size = new System.Drawing.Size(121, 21);
             this.idiomaComboBox.TabIndex = 10;
@@ -78,7 +78,7 @@
             // 
             this.filtrarIdioma.AutoSize = true;
             this.filtrarIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filtrarIdioma.Location = new System.Drawing.Point(31, 627);
+            this.filtrarIdioma.Location = new System.Drawing.Point(60, 623);
             this.filtrarIdioma.Name = "filtrarIdioma";
             this.filtrarIdioma.Size = new System.Drawing.Size(80, 20);
             this.filtrarIdioma.TabIndex = 11;
@@ -87,7 +87,7 @@
             // filtrarBut
             // 
             this.filtrarBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.filtrarBut.Location = new System.Drawing.Point(261, 624);
+            this.filtrarBut.Location = new System.Drawing.Point(290, 620);
             this.filtrarBut.Name = "filtrarBut";
             this.filtrarBut.Size = new System.Drawing.Size(91, 31);
             this.filtrarBut.TabIndex = 13;
@@ -98,7 +98,7 @@
             // matricularBut
             // 
             this.matricularBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.matricularBut.Location = new System.Drawing.Point(374, 615);
+            this.matricularBut.Location = new System.Drawing.Point(403, 611);
             this.matricularBut.Name = "matricularBut";
             this.matricularBut.Size = new System.Drawing.Size(115, 48);
             this.matricularBut.TabIndex = 14;
@@ -111,13 +111,13 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(44, 105);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(707, 471);
+            this.dataGridView1.Size = new System.Drawing.Size(761, 471);
             this.dataGridView1.TabIndex = 15;
             // 
             // modificarButton
             // 
             this.modificarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificarButton.Location = new System.Drawing.Point(504, 615);
+            this.modificarButton.Location = new System.Drawing.Point(533, 611);
             this.modificarButton.Name = "modificarButton";
             this.modificarButton.Size = new System.Drawing.Size(115, 48);
             this.modificarButton.TabIndex = 16;
@@ -130,7 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(795, 702);
+            this.ClientSize = new System.Drawing.Size(852, 702);
             this.Controls.Add(this.modificarButton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.matricularBut);

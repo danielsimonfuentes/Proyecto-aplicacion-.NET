@@ -53,8 +53,9 @@ namespace AcademiaIdiomas
                             while(reader.Read())
                             {
                                 hecho = true;
-                                posicion = Usuario.listaUsuarios.FindIndex(x => x.NombreUsuario == usuarioBox.Text.ToLower());
-                                Usuario.usuarioActual.Add(Usuario.listaUsuarios[posicion]);
+                                
+                                //posicion = Usuario.listaUsuarios.FindIndex(x => x.NombreUsuario == usuarioBox.Text.ToLower());
+                                Usuario.usuarioActual.Add(new Usuario(reader["Nombre"].ToString(), reader["Apellido1"].ToString(), reader["Apellido2"].ToString(), reader["Dni"].ToString(), reader["Domicilio"].ToString(), DateTime.Parse(reader["FechaNac"].ToString()), reader["Usuario"].ToString(), reader["Contrasena"].ToString(), Convert.ToBoolean(reader["Admin"].ToString())));
 
                                 FormPrincipalSesion Form = new FormPrincipalSesion();
                                 Form.Show();
@@ -114,10 +115,10 @@ namespace AcademiaIdiomas
                 //cargarEstudiantes();
 
                 //ControladorUsuario.escribirUsuarioTXT();
-                ControladorUsuario.leerUsuarioTXT();
-                ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
-                ControladorEstudiante.leerEstudiantesJSON("franceses.json");
-                ControladorEstudiante.leerEstudiantesBin("alemanes.bin");
+                //ControladorUsuario.leerUsuarioTXT();
+                //ControladorEstudiante.leerEstudiantesXML("ingleses.xml");
+                //ControladorEstudiante.leerEstudiantesJSON("franceses.json");
+                //ControladorEstudiante.leerEstudiantesBin("alemanes.bin");
                 vecesCargado++;
             }
             
